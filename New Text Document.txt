@@ -1,0 +1,16 @@
+1. git bash
+2. sublime text
+3. python 3.8.2
+4. github desktop
+5. advanced settings me python add as path
+6. advanced stt me add script path
+7. vs studio cde
+8. vs
+9. iitd repo
+10. bsw
+11. ssh tutorials
+12 java.exe jdk oracle
+13 path java
+14. putty
+15. https://github.com/agrawal-d/competitive-programming-helper
+16. 
