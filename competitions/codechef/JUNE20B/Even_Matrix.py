@@ -1,10 +1,14 @@
 # cook your dish here
 for t in range(int(input())):
-    #n=int(input())
-    sum=0
-    m,k=map(int,input().split())
-    arr=list(map(int,input().split()))
-    for i in range(m):
-        if arr[i]>k:
-            sum+=arr[i]-k
-    print(sum)
+    n=int(input())
+    res=0
+    for i in range(1,n+1):
+        if i%2==1:
+            for j in range(1,n+1):
+                print(res+j,end=" ")
+            print()
+        else:
+            for j in range(n,0,-1):
+                print(res+j,end=" ")
+            print()
+        res+=n

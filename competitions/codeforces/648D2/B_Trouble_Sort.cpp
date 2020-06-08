@@ -16,12 +16,15 @@ int main()
 	cin >> t;
     while(t--)
     {
-        long long int n,sum=0;
-        cin>>n;
-        vector<int> arr(n);
+        long long int n,m,sum=0;
+        cin>>n>>m;
+        vector<vector<int>> arr(n);
         for(int i=0;i<n;i++)
         {
-            cin>>arr[i];
+            for(int j=0;j<n;j++)
+            {
+                cin>>arr[i][j];
+            }
         }
         
 //        printvector(arr);

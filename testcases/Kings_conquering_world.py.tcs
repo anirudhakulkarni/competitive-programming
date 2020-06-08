@@ -1,0 +1,1 @@
+[{"input":"4\n2 5 4 6\n1 2 5 4\n-4 -3 -2 5\n-3 -5 1 3\n1 0 3 5\n2 3 5 8\n-2 2 4 4\n-3 1 5 5","output":"No War Between Rohan and Mohan.\n10\nWar Between Rohan and Mohan.\n42\nWar Between Rohan and Mohan.\n23\nWar Between Rohan and Mohan.\n32"}]

@@ -12,23 +12,26 @@ long long int mod=1000000007;
 int main()
 {
     fio;
-	ll t;
-	cin >> t;
-    while(t--)
-    {
-        long long int n,sum=0;
+	
+        long long int n,sum=0,maxnum=0;
         cin>>n;
-        vector<int> arr(n);
+        vector<int> arra(n);
         for(int i=0;i<n;i++)
         {
-            cin>>arr[i];
+            cin>>arra[i];
         }
+        vector<int> arrb(n);
+        for(int i=0;i<n;i++)
+        {
+            cin>>arrb[i];
+        }
+        
         
 //        printvector(arr);
 //        sort(arr.begin(),arr.end());
 
 
 
-    }
+    
     return 0;
 }
