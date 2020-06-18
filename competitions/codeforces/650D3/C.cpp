@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+using namespace std;
 typedef long long ll;
 typedef vector<int> vi; 
 typedef vector< vi > vvi; 
@@ -19,7 +20,6 @@ typedef vector< vi > vvi;
 #define endl "\n"
 long long int mod=1000000007;
 //////////////////////////
-
 int main()
 {
     #ifndef ONLINE_JUDGE
@@ -28,22 +28,31 @@ int main()
     // for writing output to output.txt
     freopen("E:/codes/testcases/output.in", "w", stdout);
     #endif
-    int t;
-    cin >>t;
-    for (int k=0; k<t; k++) {
-      long long n;
-      cin>>n;
-      set<long long> ans;
-      ans.insert(0);
-      for (long long i=1; i*i<=n; i++) {
-        ans.insert(i);
-        ans.insert(n/i);
-      }
-      cout<<ans.size()<<endl;
-      for (auto el : ans) {
-        cout<<el<<' ';
-      }
-      cout<<endl;
+    ll t;
+    cin >> t;
+    while(t--)
+    {
+        long long int a,b,x,n,m,k,sum=0,ans=0,anso=0;
+        cin>>n>>k;
+        string s;
+        cin>>s;
+        vector<int> solarr;
+        for(int i=0;i<n;i++){
+        	if(s[i]=='1'){
+        		solarr.PB(i);
+        	}
+        }
+        
+        for(int i=0;i<solarr.size()-1;i++){
+        	ans+=(solarr[i+1]-solarr[i]-k-1)/(k+1);
+        }
+        cout<<ans<<endl;
+        
+//       printvector(arr);
+//        sort(arr.begin(),arr.end());
+
+
     }
-  return 0;
+    return 0;
 }
+

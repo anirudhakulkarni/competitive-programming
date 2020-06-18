@@ -19,7 +19,6 @@ typedef vector< vi > vvi;
 #define endl "\n"
 long long int mod=1000000007;
 //////////////////////////
-
 int main()
 {
     #ifndef ONLINE_JUDGE
@@ -28,22 +27,50 @@ int main()
     // for writing output to output.txt
     freopen("E:/codes/testcases/output.in", "w", stdout);
     #endif
-    int t;
-    cin >>t;
-    for (int k=0; k<t; k++) {
-      long long n;
-      cin>>n;
-      set<long long> ans;
-      ans.insert(0);
-      for (long long i=1; i*i<=n; i++) {
-        ans.insert(i);
-        ans.insert(n/i);
-      }
-      cout<<ans.size()<<endl;
-      for (auto el : ans) {
-        cout<<el<<' ';
-      }
-      cout<<endl;
-    }
-  return 0;
+    long long int a,b,x,n,m,k,sum=0,ans=0,res=0;
+    cin >> n;
+	string s;
+	cin>>s;
+	vector<int> solarr;
+	loop(i,0,n){
+		int xx=s[i]-48;
+		if(xx==2){
+			solarr.PB(2);}
+		if(xx==3){
+			solarr.PB(3);}
+		if(xx==5){
+			solarr.PB(5);}
+		if(xx==6){
+			solarr.PB(5);
+			solarr.PB(3);}
+		if(xx==7){
+			solarr.PB(7);}
+		if(xx==8){
+			solarr.PB(2);
+			solarr.PB(2);
+			solarr.PB(2);
+			solarr.PB(7);
+		}
+		if(xx==4){
+			solarr.PB(2);
+			solarr.PB(3);
+			solarr.PB(2);
+		}
+
+		if(xx==9){
+			solarr.PB(7);
+			solarr.PB(3);
+			solarr.PB(3);
+			solarr.PB(2);
+		}
+	}  
+
+	sort(solarr.rbegin(),solarr.rend());
+	loop(i,0,solarr.size()){
+		cout<<solarr[i];
+	}
+
+
+
+    return 0;
 }

@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+using namespace std;
 typedef long long ll;
 typedef vector<int> vi; 
 typedef vector< vi > vvi; 
@@ -19,7 +20,6 @@ typedef vector< vi > vvi;
 #define endl "\n"
 long long int mod=1000000007;
 //////////////////////////
-
 int main()
 {
     #ifndef ONLINE_JUDGE
@@ -28,22 +28,37 @@ int main()
     // for writing output to output.txt
     freopen("E:/codes/testcases/output.in", "w", stdout);
     #endif
-    int t;
-    cin >>t;
-    for (int k=0; k<t; k++) {
-      long long n;
-      cin>>n;
-      set<long long> ans;
-      ans.insert(0);
-      for (long long i=1; i*i<=n; i++) {
-        ans.insert(i);
-        ans.insert(n/i);
-      }
-      cout<<ans.size()<<endl;
-      for (auto el : ans) {
-        cout<<el<<' ';
-      }
-      cout<<endl;
+    ll t;
+    cin >> t;
+    while(t--)
+    {
+        long long int a,b,x,n,m,k,sum=0,anse=0,anso=0;
+        cin>>n;
+        vector<int> arr(n);
+        loop(i,0,n)
+        {
+            cin>>arr[i];
+            if(i%2!=arr[i]%2){
+            	if(arr[i]%2==0){
+            	anse++;}
+            	else{
+            		anso++;
+            	}
+            }
+        }
+        if(anse==anso){
+        	cout<<anse<<endl;
+        }
+        else{
+        	cout<<-1<<endl;
+        }
+
+        
+//       printvector(arr);
+//        sort(arr.begin(),arr.end());
+
+
     }
-  return 0;
+    return 0;
 }
+

@@ -19,7 +19,6 @@ typedef vector< vi > vvi;
 #define endl "\n"
 long long int mod=1000000007;
 //////////////////////////
-
 int main()
 {
     #ifndef ONLINE_JUDGE
@@ -28,22 +27,31 @@ int main()
     // for writing output to output.txt
     freopen("E:/codes/testcases/output.in", "w", stdout);
     #endif
-    int t;
-    cin >>t;
-    for (int k=0; k<t; k++) {
-      long long n;
-      cin>>n;
-      set<long long> ans;
-      ans.insert(0);
-      for (long long i=1; i*i<=n; i++) {
-        ans.insert(i);
-        ans.insert(n/i);
-      }
-      cout<<ans.size()<<endl;
-      for (auto el : ans) {
-        cout<<el<<' ';
-      }
-      cout<<endl;
+    long long int a,b,x,n,m,k,sum=0,ans=0,res=0;
+    cin >> n>>k;
+    vector<int> arr(n);
+            loop(i,0,n)
+            {
+                cin>>arr[i];
+            }
+            
+    //       printvector(arr);
+    //        sort(arr.begin(),arr.end());
+    loop(i,0,k){
+    	sum+=arr[i];
     }
-  return 0;
+    vector<int> solarr;
+    solarr.PB(sum);
+    loop(i,0,n-k){
+    	sum+=arr[i+k]-arr[i];
+    	solarr.PB(sum);
+    }
+    ans=0;
+    loop(i,0,n-k+1){
+    	if(solarr[i]<solarr[ans]){
+    		ans=i;
+    	}
+    }
+    cout<<ans+1;
+    return 0;
 }
