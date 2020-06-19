@@ -1,23 +1,3 @@
-
-## Backtracking
-  * [Graph Coloring](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/backtracking/graph_coloring.cpp)
-  * [Knight Tour](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/backtracking/knight_tour.cpp)
-  * [Minimax](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/backtracking/minimax.cpp)
-  * [N Queens](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/backtracking/n_queens.cpp)
-  * [N Queens All Solution Optimised](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/backtracking/n_queens_all_solution_optimised.cpp)
-  * [Nqueen Print All Solutions](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/backtracking/nqueen_print_all_solutions.cpp)
-  * [Rat Maze](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/backtracking/rat_maze.cpp)
-  * [Sudoku Solve](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/backtracking/sudoku_solve.cpp)
-
-## Computer Oriented Statistical Methods
-  * [Bisection Method](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/computer_oriented_statistical_methods/Bisection_method.CPP)
-  * [False-Position](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/computer_oriented_statistical_methods/false-position.cpp)
-  * [Gaussian Elimination](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/computer_oriented_statistical_methods/Gaussian_elimination.cpp)
-  * [Newton Raphson](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/computer_oriented_statistical_methods/Newton_Raphson.CPP)
-  * [Ordinary Least Squares Regressor](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/computer_oriented_statistical_methods/ordinary_least_squares_regressor.cpp)
-  * [Secant Method](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/computer_oriented_statistical_methods/Secant_method.CPP)
-  * [Successive Approximation](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/computer_oriented_statistical_methods/successive_approximation.CPP)
-
 ## Data Structure
   * [Avltree](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/data_structure/AVLtree.cpp)
   * [Binary Search Tree](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/data_structure/Binary%20Search%20Tree.cpp)
@@ -51,31 +31,6 @@
   * [Tree](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/data_structure/Tree.cpp)
   * [Trie Modern](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/data_structure/trie_modern.cpp)
   * [Trie Tree](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/data_structure/trie_tree.cpp)
-
-## Dynamic Programming
-  * [0-1 Knapsack](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/0-1%20Knapsack.cpp)
-  * [Armstrong Number](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/armstrong_number.cpp)
-  * [Bellman-Ford](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/Bellman-Ford.cpp)
-  * [Catalan-Numbers](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/Catalan-Numbers.cpp)
-  * [Coin-Change](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/Coin-Change.cpp)
-  * [Cut Rod](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/Cut%20Rod.cpp)
-  * [Edit Distance](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/Edit%20Distance.cpp)
-  * [Egg-Dropping-Puzzle](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/Egg-Dropping-Puzzle.cpp)
-  * [Fibonacci Bottom Up](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/Fibonacci_Bottom_Up.cpp)
-  * [Fibonacci Top Down](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/Fibonacci_Top_Down.cpp)
-  * [Floyd-Warshall](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/Floyd-Warshall.cpp)
-  * [Kadane](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/kadane.cpp)
-  * [Longest Common Subsequence](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/Longest%20Common%20Subsequence.cpp)
-  * [Longest Increasing Subsequence (Nlogn)](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/Longest%20Increasing%20Subsequence%20(nlogn).cpp)
-  * [Longest Increasing Subsequence](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/Longest%20Increasing%20Subsequence.cpp)
-  * [Longest Common String](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/longest_common_string.cpp)
-  * [Matrix-Chain-Multiplication](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/Matrix-Chain-Multiplication.cpp)
-  * [Searching Of Element In Dynamic Array](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/searching_of_element_in_dynamic_array.cpp)
-  * [Tree Height](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/tree_height.cpp)
-
-## Geometry
-  * [Line Segment Intersection](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/geometry/line_segment_intersection.cpp)
-
 ## Graph
   * [Bfs](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/graph/BFS.cpp)
   * [Bridge Finding With Tarjan Algorithm](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/graph/bridge_finding_with_tarjan_algorithm.cpp)
@@ -98,6 +53,51 @@
   * [Knapsack](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/greedy_algorithms/Knapsack.cpp)
   * [Kruskals Minimum Spanning Tree](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/greedy_algorithms/Kruskals%20Minimum%20Spanning%20Tree.cpp)
   * [Prims Minimum Spanning Tree](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/greedy_algorithms/Prims%20Minimum%20Spanning%20Tree.cpp)
+
+## Dynamic Programming
+  * [0-1 Knapsack](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/0-1%20Knapsack.cpp)
+  * [Armstrong Number](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/armstrong_number.cpp)
+  * [Bellman-Ford](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/Bellman-Ford.cpp)
+  * [Catalan-Numbers](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/Catalan-Numbers.cpp)
+  * [Coin-Change](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/Coin-Change.cpp)
+  * [Cut Rod](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/Cut%20Rod.cpp)
+  * [Edit Distance](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/Edit%20Distance.cpp)
+  * [Egg-Dropping-Puzzle](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/Egg-Dropping-Puzzle.cpp)
+  * [Fibonacci Bottom Up](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/Fibonacci_Bottom_Up.cpp)
+  * [Fibonacci Top Down](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/Fibonacci_Top_Down.cpp)
+  * [Floyd-Warshall](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/Floyd-Warshall.cpp)
+  * [Kadane](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/kadane.cpp)
+  * [Longest Common Subsequence](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/Longest%20Common%20Subsequence.cpp)
+  * [Longest Increasing Subsequence (Nlogn)](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/Longest%20Increasing%20Subsequence%20(nlogn).cpp)
+  * [Longest Increasing Subsequence](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/Longest%20Increasing%20Subsequence.cpp)
+  * [Longest Common String](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/longest_common_string.cpp)
+  * [Matrix-Chain-Multiplication](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/Matrix-Chain-Multiplication.cpp)
+  * [Searching Of Element In Dynamic Array](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/searching_of_element_in_dynamic_array.cpp)
+  * [Tree Height](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/dynamic_programming/tree_height.cpp)
+
+## Backtracking
+  * [Graph Coloring](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/backtracking/graph_coloring.cpp)
+  * [Knight Tour](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/backtracking/knight_tour.cpp)
+  * [Minimax](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/backtracking/minimax.cpp)
+  * [N Queens](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/backtracking/n_queens.cpp)
+  * [N Queens All Solution Optimised](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/backtracking/n_queens_all_solution_optimised.cpp)
+  * [Nqueen Print All Solutions](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/backtracking/nqueen_print_all_solutions.cpp)
+  * [Rat Maze](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/backtracking/rat_maze.cpp)
+  * [Sudoku Solve](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/backtracking/sudoku_solve.cpp)
+
+## Computer Oriented Statistical Methods
+  * [Bisection Method](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/computer_oriented_statistical_methods/Bisection_method.CPP)
+  * [False-Position](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/computer_oriented_statistical_methods/false-position.cpp)
+  * [Gaussian Elimination](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/computer_oriented_statistical_methods/Gaussian_elimination.cpp)
+  * [Newton Raphson](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/computer_oriented_statistical_methods/Newton_Raphson.CPP)
+  * [Ordinary Least Squares Regressor](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/computer_oriented_statistical_methods/ordinary_least_squares_regressor.cpp)
+  * [Secant Method](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/computer_oriented_statistical_methods/Secant_method.CPP)
+  * [Successive Approximation](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/computer_oriented_statistical_methods/successive_approximation.CPP)
+
+
+## Geometry
+  * [Line Segment Intersection](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/geometry/line_segment_intersection.cpp)
+
 
 ## Hashing
   * [Chaining](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/hashing/Chaining.cpp)
