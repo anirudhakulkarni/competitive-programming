@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include "bits/stdc++.h"
+using namespace std;
 using namespace std;
 typedef long long ll;
 typedef vector<int> vi; 
@@ -27,28 +28,32 @@ int main()
     // for writing output to output.txt
     freopen("E:/codes/testcases/output.in", "w", stdout);
     #endif
-    long long int a,b,x,n,m,k,sum=0,ans=0,res=0;
-    cin >> n;
-	    if(n%2==1){loop(i,0,n){
-	    	    	cout<<i<<" ";
-	    	    }
-	    	    cout<<endl;
-	    	    
+    ll t;
+ 
+        long long int a,b,x,n,m,k,sum=0,ans=0,res=0;
+        cin>>k;
+        vector<pair<long long int, long long int>> arr;
+        loop(i,0,k)
+        {
+        	pair<long long int,long long int> p1;
+            cin>>m>>n;
+            p1=make_pair(m,n);
+            arr.PB(p1);
+        }
+        for (int i=0;i<k;i++){
+        	for (int j=i+1;j<k;j++){
+        		if(arr[i].F==arr[j].F || arr[i].S==arr[j].S){
+        			ans++;
+        		}
+        	}
 
-	    	    loop(i,0,n){
-	    	    	cout<<i<<" ";
-	    	    }
-	    	    cout<<endl;
-	    	    for(int i=0;i<n;i+=2){
-	    	    	cout<<i<<" ";
-	    	    }
-	    	    for(int i=1;i<n;i+=2){
-	    	    	cout<<i<<" ";
-	    	    }
+        }
+        cout<<ans;
+        
+//       printvector(arr);
+//        sort(arr.begin(),arr.end());
 
-	    	    cout<<endl;
-	    }
-	    else{cout<<-1;}
-    
+
     return 0;
 }
+

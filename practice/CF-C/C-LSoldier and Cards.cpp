@@ -27,28 +27,41 @@ int main()
     // for writing output to output.txt
     freopen("E:/codes/testcases/output.in", "w", stdout);
     #endif
-    long long int a,b,x,n,m,k,sum=0,ans=0,res=0;
+    long long int a,b,x,y,n,m,k,sum=0,ans=0,res=0;
     cin >> n;
-	    if(n%2==1){loop(i,0,n){
-	    	    	cout<<i<<" ";
-	    	    }
-	    	    cout<<endl;
-	    	    
+    queue <long long int> q1,q2;
+   	cin>> n;
+   	loop(i,0,n){
+   		cin>>m;
+   		q1.push(m);
+   	}
+   	cin>> n;
+   	loop(i,0,n){
+   		cin>>m;
+   		q2.push(m);
+   	}
+   	m=0;
+   	while(!q1.empty()&&!q2.empty()){
+   		x=q1.front();
+   		q1.pop();
+   		y=q2.front();
+   		q2.pop();
+if(x>y)
+		{
+			q1.push(y);
+			q1.push(x);
+		}
+		else if(x<y)
+		{
+			q2.push(x);
+			q2.push(y);
+		}
+		m++;
+		if(m>1e6) break;
+	}
+	if(q1.empty()) cout<<m<<" "<<2<<endl;
+	else if(q2.empty()) cout<<m<<" 1\n";
+	else cout<<-1<<endl;
 
-	    	    loop(i,0,n){
-	    	    	cout<<i<<" ";
-	    	    }
-	    	    cout<<endl;
-	    	    for(int i=0;i<n;i+=2){
-	    	    	cout<<i<<" ";
-	    	    }
-	    	    for(int i=1;i<n;i+=2){
-	    	    	cout<<i<<" ";
-	    	    }
-
-	    	    cout<<endl;
-	    }
-	    else{cout<<-1;}
-    
     return 0;
 }

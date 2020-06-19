@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include "bits/stdc++.h"
 using namespace std;
 typedef long long ll;
 typedef vector<int> vi; 
@@ -28,27 +28,22 @@ int main()
     freopen("E:/codes/testcases/output.in", "w", stdout);
     #endif
     long long int a,b,x,n,m,k,sum=0,ans=0,res=0;
-    cin >> n;
-	    if(n%2==1){loop(i,0,n){
-	    	    	cout<<i<<" ";
-	    	    }
-	    	    cout<<endl;
-	    	    
-
-	    	    loop(i,0,n){
-	    	    	cout<<i<<" ";
-	    	    }
-	    	    cout<<endl;
-	    	    for(int i=0;i<n;i+=2){
-	    	    	cout<<i<<" ";
-	    	    }
-	    	    for(int i=1;i<n;i+=2){
-	    	    	cout<<i<<" ";
-	    	    }
-
-	    	    cout<<endl;
-	    }
-	    else{cout<<-1;}
+    cin >> n>>m>>k;
+    vector<int> arr(n);
+            loop(i,0,n)
+            {
+                cin>>arr[i];
+            }
+    vector<vector<int>> oarr(m);
+    loop(i,0,m){
+    	cin>>oarr[i];
+    }        
+    vector<vector<int>> qarr(m);
+    loop(i,0,m){
+    	cin>>qarr[i];
+    }        
+    //       printvector(arr);
+    //        sort(arr.begin(),arr.end());
     
     return 0;
 }
