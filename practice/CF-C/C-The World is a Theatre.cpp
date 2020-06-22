@@ -1,5 +1,6 @@
 #include "bits/stdc++.h"
 using namespace std;
+typedef long long ll;
 typedef vector<int> vi; 
 typedef vector< vi > vvi; 
 /////////////////////////
@@ -16,8 +17,33 @@ typedef vector< vi > vvi;
 #define printvop(n) loop(i,0,n.size()-1){printpair(n[i])<<endl;}
 #define fio ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
 #define endl "\n"
- int mod=1000000007;
+long long int mod=1000000007;
 //////////////////////////
+
+long long int binomialCoeff(long long int n,long long int k) 
+{ 
+    long long int res = 1; 
+  
+    // Since C(n, k) = C(n, n-k) 
+    if (n<k){
+    	return 0;
+    }
+    if(n==k){
+    	return 1;
+    }
+    if (k > n - k) 
+        k = n - k; 
+  
+    // Calculate value of 
+    // [n * (n-1) *---* (n-k+1)] / [k * (k-1) *----* 1] 
+    for (long long int i = 0; i < k; ++i) { 
+        res *= (n - i); 
+        res /= (i + 1); 
+    } 
+  
+    return res; 
+} 
+
 int main()
 {
     #ifndef ONLINE_JUDGE
@@ -26,35 +52,16 @@ int main()
     // for writing output to output.txt
     freopen("E:/codes/testcases/output.in", "w", stdout);
     #endif
-     int a,b,x,n,m,k,sum=0,ans=0,res=0;
-    cin >> n>>m>>k;
-    vector<int> arr(n);
-            loop(i,0,n)
-            {
-                cin>>arr[i];
-            }
-    vector<vector<int>> oarr(m,(vector<int> (3,0)));
-    loop(i,0,m){
-    	cin>>oarr[i][0]>>oarr[i][1]>>oarr[i][2];
-    }        
-    vector<vector<int>> qarr(k,(vector<int> (2,0)));
-    vector<int>solarr(n,0);
-    loop(i,0,k){
-    	cin>>qarr[i][0]>>qarr[i][1];
-    	for(int j=qarr[i][0]-1;j<=qarr[i][1]-1;j++){
-    		solarr[j]++;
-    	}
-    }        
-    for(int i=0;i<m;i++){
-    	for(int j=oarr[i][0];j<=oarr[i][1];j++){
-    		arr[j-1]+=oarr[i][2]*solarr[i];
-    	}
+    long long int a,b,x,t,n,m,k,sum=0,ans=0,res=0;
+    cin >> n>>m>>t;
+    ans=binomialCoeff(n,4)*binomialCoeff(m,1);
+    n=n-4;
+    m--;
+    t-=5;
+    for(int i=0;i<=t;i++){
+    	sum+=binomialCoeff(n,i)*binomialCoeff(m,t-i);
+
     }
-
-    printvector(arr);
-
-    //       printvector(arr);
-    //        sort(arr.begin(),arr.end());
-    
+    cout<<ans*sum;
     return 0;
 }

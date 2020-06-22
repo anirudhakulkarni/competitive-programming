@@ -1,5 +1,6 @@
 #include "bits/stdc++.h"
 using namespace std;
+typedef long long ll;
 typedef vector<int> vi; 
 typedef vector< vi > vvi; 
 /////////////////////////
@@ -16,8 +17,31 @@ typedef vector< vi > vvi;
 #define printvop(n) loop(i,0,n.size()-1){printpair(n[i])<<endl;}
 #define fio ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
 #define endl "\n"
- int mod=1000000007;
+long long int mod=1000000007;
 //////////////////////////
+int power(long long int x,long long int y,long long int p)  
+{  
+    long long int res = 1;     // Initialize result  
+  
+    x = x % p; // Update x if it is more than or  
+                // equal to p 
+   
+    if (x == 0) return 0; // In case x is divisible by p; 
+  
+    while (y > 0)  
+    {  
+        // If y is odd, multiply x with result  
+        if (y & 1)  
+            res = (res*x) % p;  
+  
+        // y must be even now  
+        y = y>>1; // y = y/2  
+        x = (x*x) % p;  
+    }  
+    return res;  
+}  
+
+
 int main()
 {
     #ifndef ONLINE_JUDGE
@@ -26,35 +50,17 @@ int main()
     // for writing output to output.txt
     freopen("E:/codes/testcases/output.in", "w", stdout);
     #endif
-     int a,b,x,n,m,k,sum=0,ans=0,res=0;
-    cin >> n>>m>>k;
-    vector<int> arr(n);
-            loop(i,0,n)
-            {
-                cin>>arr[i];
-            }
-    vector<vector<int>> oarr(m,(vector<int> (3,0)));
-    loop(i,0,m){
-    	cin>>oarr[i][0]>>oarr[i][1]>>oarr[i][2];
-    }        
-    vector<vector<int>> qarr(k,(vector<int> (2,0)));
-    vector<int>solarr(n,0);
-    loop(i,0,k){
-    	cin>>qarr[i][0]>>qarr[i][1];
-    	for(int j=qarr[i][0]-1;j<=qarr[i][1]-1;j++){
-    		solarr[j]++;
-    	}
-    }        
-    for(int i=0;i<m;i++){
-    	for(int j=oarr[i][0];j<=oarr[i][1];j++){
-    		arr[j-1]+=oarr[i][2]*solarr[i];
-    	}
+    long long int a,b,x,n,m,k,sum=0,ans=1,res=0;
+    cin >> k;
+    string s;
+    cin>>s;
+    n=s.size();
+    for(int i=n+k;i>n;i--){
+        ans=((ans%mod)*(i%mod))%mod;
     }
-
-    printvector(arr);
-
-    //       printvector(arr);
-    //        sort(arr.begin(),arr.end());
-    
+    ans=(ans*power(26,k,mod))%mod;
+    cout<<ans<<endl;
+    cout<<79842846720%575111451
+;
     return 0;
 }

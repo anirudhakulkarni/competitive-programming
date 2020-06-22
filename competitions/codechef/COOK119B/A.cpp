@@ -1,5 +1,7 @@
 #include "bits/stdc++.h"
 using namespace std;
+using namespace std;
+typedef long long ll;
 typedef vector<int> vi; 
 typedef vector< vi > vvi; 
 /////////////////////////
@@ -16,7 +18,7 @@ typedef vector< vi > vvi;
 #define printvop(n) loop(i,0,n.size()-1){printpair(n[i])<<endl;}
 #define fio ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
 #define endl "\n"
- int mod=1000000007;
+long long int mod=1000000007;
 //////////////////////////
 int main()
 {
@@ -26,35 +28,34 @@ int main()
     // for writing output to output.txt
     freopen("E:/codes/testcases/output.in", "w", stdout);
     #endif
-     int a,b,x,n,m,k,sum=0,ans=0,res=0;
-    cin >> n>>m>>k;
-    vector<int> arr(n);
-            loop(i,0,n)
-            {
-                cin>>arr[i];
+    ll t;
+    cin >> t;
+    while(t--)
+    {
+        long long int a,b,x,n,m,k,sum=0,ans=0,res=0;
+        cin>>n>>m;
+        vector<int> arr(n);
+        loop(i,0,n)
+        {
+            cin>>arr[i];
+            if(arr[i]==m){
+                sum++;
             }
-    vector<vector<int>> oarr(m,(vector<int> (3,0)));
-    loop(i,0,m){
-    	cin>>oarr[i][0]>>oarr[i][1]>>oarr[i][2];
-    }        
-    vector<vector<int>> qarr(k,(vector<int> (2,0)));
-    vector<int>solarr(n,0);
-    loop(i,0,k){
-    	cin>>qarr[i][0]>>qarr[i][1];
-    	for(int j=qarr[i][0]-1;j<=qarr[i][1]-1;j++){
-    		solarr[j]++;
-    	}
-    }        
-    for(int i=0;i<m;i++){
-    	for(int j=oarr[i][0];j<=oarr[i][1];j++){
-    		arr[j-1]+=oarr[i][2]*solarr[i];
-    	}
+        }
+        
+//       printvector(arr);
+        sort(arr.begin(),arr.end());
+        if(arr[m-2]!=m-1){
+            cout<<-1<<endl;
+        }
+        else{
+            cout<<n-sum<<endl;
+        }
+
+
+
+
     }
-
-    printvector(arr);
-
-    //       printvector(arr);
-    //        sort(arr.begin(),arr.end());
-    
     return 0;
 }
+

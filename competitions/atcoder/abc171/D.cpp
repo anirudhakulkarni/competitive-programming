@@ -1,5 +1,6 @@
 #include "bits/stdc++.h"
 using namespace std;
+typedef long long ll;
 typedef vector<int> vi; 
 typedef vector< vi > vvi; 
 /////////////////////////
@@ -16,8 +17,9 @@ typedef vector< vi > vvi;
 #define printvop(n) loop(i,0,n.size()-1){printpair(n[i])<<endl;}
 #define fio ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
 #define endl "\n"
- int mod=1000000007;
+long long int mod=1000000007;
 //////////////////////////
+
 int main()
 {
     #ifndef ONLINE_JUDGE
@@ -26,35 +28,39 @@ int main()
     // for writing output to output.txt
     freopen("E:/codes/testcases/output.in", "w", stdout);
     #endif
-     int a,b,x,n,m,k,sum=0,ans=0,res=0;
-    cin >> n>>m>>k;
-    vector<int> arr(n);
+    long long int a,b,x,n,c,m,k,sum=0,ans=0,res=0,q;
+    cin >> n;
+    map<int, int> amap;
+    ;
+    int arr[n];
             loop(i,0,n)
             {
                 cin>>arr[i];
+                sum+=arr[i];
+                if(amap[arr[i]]>0){
+                                amap[arr[i]]++;}
+                else{
+                    amap[arr[i]]=1; 
+                }
             }
-    vector<vector<int>> oarr(m,(vector<int> (3,0)));
-    loop(i,0,m){
-    	cin>>oarr[i][0]>>oarr[i][1]>>oarr[i][2];
-    }        
-    vector<vector<int>> qarr(k,(vector<int> (2,0)));
-    vector<int>solarr(n,0);
-    loop(i,0,k){
-    	cin>>qarr[i][0]>>qarr[i][1];
-    	for(int j=qarr[i][0]-1;j<=qarr[i][1]-1;j++){
-    		solarr[j]++;
-    	}
-    }        
-    for(int i=0;i<m;i++){
-    	for(int j=oarr[i][0];j<=oarr[i][1];j++){
-    		arr[j-1]+=oarr[i][2]*solarr[i];
-    	}
-    }
+  
+    cin>>q;
 
-    printvector(arr);
+for (int i = 0; i < q; ++i)
+    {
+    	/* code */
+    	cin>>b>>c;
+        sum-=amap[b]*b;
+        sum+=amap[b]*c;
+        
+        amap[c]+=amap[b];
+        amap[b]=0;
+        
+        cout<<sum<<endl;
 
-    //       printvector(arr);
+    }    //       printvector(arr);
     //        sort(arr.begin(),arr.end());
     
+
     return 0;
 }

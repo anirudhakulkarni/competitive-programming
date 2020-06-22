@@ -1,5 +1,7 @@
 #include "bits/stdc++.h"
 using namespace std;
+using namespace std;
+typedef long long ll;
 typedef vector<int> vi; 
 typedef vector< vi > vvi; 
 /////////////////////////
@@ -16,8 +18,25 @@ typedef vector< vi > vvi;
 #define printvop(n) loop(i,0,n.size()-1){printpair(n[i])<<endl;}
 #define fio ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
 #define endl "\n"
- int mod=1000000007;
+long long int mod=1000000007;
 //////////////////////////
+int binomialCoeff(int n, int k) 
+{ 
+    int res = 1; 
+  
+    // Since C(n, k) = C(n, n-k) 
+    if (k > n - k) 
+        k = n - k; 
+  
+    // Calculate value of 
+    // [n * (n-1) *---* (n-k+1)] / [k * (k-1) *----* 1] 
+    for (int i = 0; i < k; ++i) { 
+        res *= (n - i); 
+        res /= (i + 1); 
+    } 
+  
+    return res; 
+} 
 int main()
 {
     #ifndef ONLINE_JUDGE
@@ -26,35 +45,32 @@ int main()
     // for writing output to output.txt
     freopen("E:/codes/testcases/output.in", "w", stdout);
     #endif
-     int a,b,x,n,m,k,sum=0,ans=0,res=0;
-    cin >> n>>m>>k;
-    vector<int> arr(n);
-            loop(i,0,n)
-            {
-                cin>>arr[i];
-            }
-    vector<vector<int>> oarr(m,(vector<int> (3,0)));
-    loop(i,0,m){
-    	cin>>oarr[i][0]>>oarr[i][1]>>oarr[i][2];
-    }        
-    vector<vector<int>> qarr(k,(vector<int> (2,0)));
-    vector<int>solarr(n,0);
-    loop(i,0,k){
-    	cin>>qarr[i][0]>>qarr[i][1];
-    	for(int j=qarr[i][0]-1;j<=qarr[i][1]-1;j++){
-    		solarr[j]++;
-    	}
-    }        
-    for(int i=0;i<m;i++){
-    	for(int j=oarr[i][0];j<=oarr[i][1];j++){
-    		arr[j-1]+=oarr[i][2]*solarr[i];
-    	}
+    ll t;
+    cin >> t;
+    while(t--)
+    {
+        long long int a,b,x,n,m,k,sum=0,ans=0,res=0;
+        cin>>n>>a>>b;
+        if(b<a){
+            sum=a;
+            a=b;
+            b=sum;
+        }
+        int xx=b-a+1;
+        int yy=n-n-a-1;
+        ans=(xx-1)*yy+(yy-1)*xx;
+        if(xx>2){
+            ans+=binomialCoeff(xx,3);
+        }
+        if(yy>2){
+            ans+=binomialCoeff(xx,3);   
+        }
+        cout<<ans<<endl;
+//       printvector(arr);
+//        sort(arr.begin(),arr.end());
+
+
     }
-
-    printvector(arr);
-
-    //       printvector(arr);
-    //        sort(arr.begin(),arr.end());
-    
     return 0;
 }
+
