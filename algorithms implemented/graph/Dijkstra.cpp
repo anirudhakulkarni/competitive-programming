@@ -3,10 +3,12 @@
 #include <cstdio>
 #include <iostream>
 using namespace std;
+#include "bits/stdc++.h"
+
 #define INF 10000010
 vector<pair<int, int>> graph[5 * 100001];
 int dis[5 * 100001];
-int dij(vector<pair<int, int>> *v, int s, int *dis)
+void dij(vector<pair<int, int>> *v, int s, int *dis)
 {
     priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
     // source distance to zero.

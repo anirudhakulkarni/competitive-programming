@@ -1,5 +1,7 @@
 #include <iostream>
 using namespace std;
+#include "bits/stdc++.h"
+
 class graph
 {
 	int v;
@@ -21,7 +23,7 @@ void graph::addedge(int src, int dest)
 	src--;
 	dest--;
 	adj[src].push_back(dest);
-	//adj[dest].push_back(src);
+	adj[dest].push_back(src);
 }
 void graph::printgraph()
 {
@@ -53,21 +55,25 @@ void graph::bfs(int s)
 		{
 			if (visited[*it] == false)
 			{
+				/*
+
+				add code here
+
+				*/
 				visited[*it] = true;
 				q.push_back(*it);
-			}
+			}																																																							
 		}
 	}
 }
 int main()
 {
-	graph g(4);
+	graph g(5);
 	g.addedge(1, 2);
 	g.addedge(2, 3);
-	g.addedge(3, 4);
-	g.addedge(1, 4);
+	g.addedge(3, 5);
+	g.addedge(1, 5);
 	g.addedge(1, 3);
-	//g.printgraph();
-	g.bfs(2);
+	g.bfs(3);
 	return 0;
 }
