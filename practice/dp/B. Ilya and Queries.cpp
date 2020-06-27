@@ -30,15 +30,40 @@ int main()
     #endif
     ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
     string s,r;
+    cin>>s;
     cin >> n;
-			vector<ll> arr(n);
-	            loop(i,0,n)
-	            {
-	                cin>>arr[i];
-	            }
-	            
-	    //       printvector(arr);
-	           sort(arr.begin(),arr.end());
-	printvector(arr);     
+    vector<int>dp(s.size());
+    for (int i = 0; i < s.size(); ++i)
+    {
+    	/* code */dp[i]=-1;
+    }
+    int qq=n;    
+    while(qq--){
+    	ll xxx,yyy,answer=0;
+    	cin>>xxx>>yyy;
+
+    	for (int i = xxx-1; i < yyy-1; ++i)
+    	{
+
+    		if(dp[i]!=-1){
+    			answer+=dp[i];
+    		}
+    		else{/* code */
+
+    			if(s[i]==s[i+1]){
+    			dp[i]=1;
+    			}
+    			else{
+    			dp[i]=0;
+    			}
+    			answer+=dp[i];
+    		}
+    	}
+    	cout<<answer<<endl;
+
+    }
+    //       printvector(arr);
+    //        sort(arr.begin(),arr.end());
+    
     return 0;
 }

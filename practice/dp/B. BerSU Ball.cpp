@@ -31,14 +31,33 @@ int main()
     ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
     string s,r;
     cin >> n;
-			vector<ll> arr(n);
-	            loop(i,0,n)
-	            {
-	                cin>>arr[i];
-	            }
-	            
-	    //       printvector(arr);
-	           sort(arr.begin(),arr.end());
-	printvector(arr);     
+    vector<int> boys;
+    vector<int>girls;
+    for (int i = 0; i < n; ++i)
+    {
+    	int ttt;
+    	cin>>ttt;
+    	boys.PB(ttt);
+    }
+    cin>>m;
+    for (int i = 0; i < m; ++i)
+    {
+    	int ttt;
+    	cin>>ttt;
+    	girls.PB(ttt);
+    }
+    
+    sort(boys.begin(), boys.end());
+sort(girls.begin(), girls.end());
+
+for (int i = 0; i < n; i++)
+    for (int j = 0; j < m; j++)
+        if (abs(boys[i] - girls[j]) <= 1)
+        {
+            girls[j] = 1000;
+            res++;
+            break;
+        }
+        cout<<res;
     return 0;
 }
