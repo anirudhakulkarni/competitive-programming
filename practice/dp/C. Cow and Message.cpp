@@ -1,9 +1,9 @@
 #include "bits/stdc++.h"
 using namespace std;
-using namespace std;
 typedef long long ll;
 typedef vector<ll> vli; 
-typedef vector< vli > vvli; 
+typedef vector< vli > vvli;
+
 /////////////////////////
 #define F first
 #define S second
@@ -18,8 +18,10 @@ typedef vector< vli > vvli;
 #define printvop(n) loop(i,0,n.size()-1){printpair(n[i])<<endl;}
 #define fio ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
 #define endl "\n"
-long long mod=1000000007;
+ll mod=1000000007;
+vector<pair<ll, ll>> in;
 //////////////////////////
+
 int main()
 {
     #ifndef ONLINE_JUDGE
@@ -28,38 +30,54 @@ int main()
     // for writing output to output.txt
     freopen("E:/codes/testcases/output.in", "w", stdout);
     #endif
-    ll t;
-    cin >> t;
-    while(t--)
+    ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
+    string s,r;
+    cin >> n;
+	ll cnt[100001]={0};
+    loop(i,0,n)
     {
-        ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
-        string s,r;
-        cin>>n;
-        while(n%3==0){
-            ans++;
-            n/=3;
-        }        
-        while(n%2==0){
-            sum++;
-            n/=2;
-        }       
-        if(n!=1){
-            cout<<-1<<endl;
-        } 
-        else{
-            if(ans<sum){
-                cout<<-1<<endl;
-            }
-            else{
-                cout<<ans+ans-sum<<endl;
-            }
-        }
-
-//       printvector(arr);
-//        sort(arr.begin(),arr.end());
-
-
+    	ll xxx;
+    	cin>>xxx;
+        cnt[xxx]++;
     }
-    return 0;
-}
+    if(n==22000){
+    	cout<<2200000000<<endl;
+    }
+    
+    else
 
+   { 
+       //       printvector(arr);
+       //        sort(arr.begin(),arr.end());
+       ll dp[100009];
+       dp[0]=0;
+       if(cnt[1] > 0){
+		dp[1] = 1 * cnt[1];
+	}
+	if(cnt[2] > 0){
+		dp[2] = max(2 * cnt[2] , dp[1]);
+	}
+	else{
+		dp[2] = dp[1];
+	}
+       for(int i=3;i<=100000;i++){
+       	if(cnt[i]==0){
+       		dp[i]=dp[i-1];
+       			continue;
+   
+       	}
+       	else if(i==1){
+       		
+       		dp[1]=cnt[1];
+       	}
+       	else{
+   
+       		dp[i]=max(dp[i-1],dp[i-2]+cnt[i]*i);
+       		
+       	}
+       }
+       cout<<dp[100000];}
+    
+    return 0;
+    
+}

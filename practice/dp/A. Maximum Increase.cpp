@@ -1,9 +1,9 @@
 #include "bits/stdc++.h"
 using namespace std;
-using namespace std;
 typedef long long ll;
 typedef vector<ll> vli; 
-typedef vector< vli > vvli; 
+typedef vector< vli > vvli;
+
 /////////////////////////
 #define F first
 #define S second
@@ -18,7 +18,9 @@ typedef vector< vli > vvli;
 #define printvop(n) loop(i,0,n.size()-1){printpair(n[i])<<endl;}
 #define fio ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
 #define endl "\n"
-long long mod=1000000007;
+ll mod=1000000007;
+#define vasort(v) sort((v).begin(), (v).end())
+#define vdsort(v) sort((v).begin(), (v).end(),greater<int>())
 //////////////////////////
 int main()
 {
@@ -28,38 +30,37 @@ int main()
     // for writing output to output.txt
     freopen("E:/codes/testcases/output.in", "w", stdout);
     #endif
-    ll t;
-    cin >> t;
-    while(t--)
-    {
-        ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
-        string s,r;
-        cin>>n;
-        while(n%3==0){
-            ans++;
-            n/=3;
-        }        
-        while(n%2==0){
-            sum++;
-            n/=2;
-        }       
-        if(n!=1){
-            cout<<-1<<endl;
-        } 
-        else{
-            if(ans<sum){
-                cout<<-1<<endl;
-            }
-            else{
-                cout<<ans+ans-sum<<endl;
-            }
-        }
-
-//       printvector(arr);
-//        sort(arr.begin(),arr.end());
-
-
-    }
+    fio;
+    ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
+    string s,r;
+    cin >> n;
+			vector<ll> arr(n);
+	            loop(i,0,n)
+	            {
+	                cin>>arr[i];
+	            }
+	 ll j=0;
+	 while(j<n){
+	 	ll maxsofar=1;
+	 	for (int i = j+1; i < n; ++i)
+	 	{
+	 		/* code */
+	 		if(arr[i]>arr[i-1]){
+	 			maxsofar++;
+	 		}
+	 		else{
+	 			break;
+	 		}
+	 	}
+	 	j+=maxsofar;
+	 	if(ans<maxsofar){
+	 		ans=maxsofar;
+	 	}
+	 	cout<<j<<" "<<maxsofar<<endl;
+	 }        
+	 cout<<ans;
+	    //       printvector(arr);
+	    //        sort(arr.begin(),arr.end());
+	        
     return 0;
 }
-

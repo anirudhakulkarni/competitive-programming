@@ -1,9 +1,9 @@
-#include <bits/stdc++.h>
+#include "bits/stdc++.h"
 using namespace std;
 using namespace std;
 typedef long long ll;
-typedef vector<int> vi; 
-typedef vector< vi > vvi; 
+typedef vector<ll> vli; 
+typedef vector< vli > vvli; 
 /////////////////////////
 #define F first
 #define S second
@@ -18,7 +18,7 @@ typedef vector< vi > vvi;
 #define printvop(n) loop(i,0,n.size()-1){printpair(n[i])<<endl;}
 #define fio ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
 #define endl "\n"
-long long int mod=1000000007;
+long long mod=1000000007;
 //////////////////////////
 int main()
 {
@@ -32,22 +32,30 @@ int main()
     cin >> t;
     while(t--)
     {
-        long long int a,b,x,n,m,k,sum=0,ans=0,anso=0;
-        cin>>n>>k;
-        string s;
+        ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
+        string s,r;
+        cin>>n;
         cin>>s;
-        vector<int> solarr;
-        for(int i=0;i<n;i++){
-        	if(s[i]=='1'){
-        		solarr.PB(i);
-        	}
-        }
-        
-        for(int i=0;i<solarr.size()-1;i++){
-        	ans+=(solarr[i+1]-solarr[i]-k-1)/(k+1);
+        stack<char> arr;
+        for (int i = 0; i < n; ++i)
+        {
+            if(s[i]=='('){
+                arr.push(s[i]);
+                continue;
+            }
+            else if(arr.empty()){
+                ans++;
+               
+                continue;
+            }
+            else{
+                        arr.pop();
+            }
+
         }
         cout<<ans<<endl;
-        
+
+
 //       printvector(arr);
 //        sort(arr.begin(),arr.end());
 

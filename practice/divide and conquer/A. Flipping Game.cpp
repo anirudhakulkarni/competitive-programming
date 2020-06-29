@@ -28,38 +28,30 @@ int main()
     // for writing output to output.txt
     freopen("E:/codes/testcases/output.in", "w", stdout);
     #endif
-    ll t;
-    cin >> t;
-    while(t--)
-    {
+   
         ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
         string s,r;
         cin>>n;
-        while(n%3==0){
-            ans++;
-            n/=3;
-        }        
-        while(n%2==0){
-            sum++;
-            n/=2;
-        }       
-        if(n!=1){
-            cout<<-1<<endl;
-        } 
-        else{
-            if(ans<sum){
-                cout<<-1<<endl;
-            }
-            else{
-                cout<<ans+ans-sum<<endl;
-            }
+        vector<int> arr(n);
+        loop(i,0,n)
+        {
+            cin>>arr[i];
+        }
+        for (int i = 0; i < n; ++i)
+        {
+        /* code */
+        	for (int j = i; i < n; ++j)
+        	{
+        		/* code */
+        		
+        	}
         }
 
 //       printvector(arr);
-//        sort(arr.begin(),arr.end());
+//
 
 
-    }
+    
     return 0;
 }
 

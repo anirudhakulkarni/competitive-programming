@@ -14,6 +14,8 @@ typedef vector< vli > vvli;
 #define printvector(n) for(int i=0;i<n.size();i++){cout<<n[i]<<" ";}cout<<'\n'
 #define printstack(n) for(int i=0;i<n.size();i++){cout<<n[i]<<" ";}cout<<'\n'
 #define PI_val 3.14159265359
+#define vasort(v) sort((v).begin(), (v).end())
+#define vdsort(v) sort((v).begin(), (v).end(),greater<int>())
 #define printpair(n) cout<<n.F<<" "<<n.S
 #define printvop(n) loop(i,0,n.size()-1){printpair(n[i])<<endl;}
 #define fio ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
@@ -28,33 +30,21 @@ int main()
     // for writing output to output.txt
     freopen("E:/codes/testcases/output.in", "w", stdout);
     #endif
+    fio;
     ll t;
     cin >> t;
     while(t--)
     {
-        ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
+        double a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
         string s,r;
-        cin>>n;
-        while(n%3==0){
-            ans++;
-            n/=3;
-        }        
-        while(n%2==0){
-            sum++;
-            n/=2;
-        }       
-        if(n!=1){
-            cout<<-1<<endl;
-        } 
-        else{
-            if(ans<sum){
-                cout<<-1<<endl;
-            }
-            else{
-                cout<<ans+ans-sum<<endl;
-            }
+        cin>>n>>m>>k;
+        if(n==m){
+            cout<<0<<endl;
         }
-
+        else{
+            cout<<min(m,n/k)-ceil((m-min(m,n/k))/(k-1))<<endl;
+        }
+        
 //       printvector(arr);
 //        sort(arr.begin(),arr.end());
 

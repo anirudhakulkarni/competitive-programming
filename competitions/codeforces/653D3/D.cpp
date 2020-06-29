@@ -20,6 +20,9 @@ typedef vector< vli > vvli;
 #define endl "\n"
 long long mod=1000000007;
 //////////////////////////
+ll fun(vector<ll>arr,ll n){
+    
+}
 int main()
 {
     #ifndef ONLINE_JUDGE
@@ -32,32 +35,34 @@ int main()
     cin >> t;
     while(t--)
     {
-        ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
+        ll a,b,x,y,p,q,n,m,k,sum=0,ans=1,resa=0;
         string s,r;
-        cin>>n;
-        while(n%3==0){
-            ans++;
-            n/=3;
-        }        
-        while(n%2==0){
-            sum++;
-            n/=2;
-        }       
-        if(n!=1){
-            cout<<-1<<endl;
-        } 
-        else{
-            if(ans<sum){
-                cout<<-1<<endl;
-            }
-            else{
-                cout<<ans+ans-sum<<endl;
-            }
+        cin>>n>>k;
+        vector<ll> arr2(n);
+        vector<ll> arr;
+        loop(i,0,n)
+        {
+            cin>>arr2[i];
+            if(arr2[i]%k!=0){
+            arr.PB(k-arr2[i]%k);}
+
         }
-
+n=arr.size();
 //       printvector(arr);
-//        sort(arr.begin(),arr.end());
-
+        sort(arr.begin(),arr.end());
+ if(n){
+     ll ansu=0;
+     for (int i = 0; i < n; ++i)
+     {
+         /* code */if(arr[i]==arr[res]){
+         ansu++;
+     }
+     }
+     cout<<1+(ansu-1)*k+arr[res]<<endl;
+ }
+ else{
+    cout<<0<<endl;
+ }
 
     }
     return 0;

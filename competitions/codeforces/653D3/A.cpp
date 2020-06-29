@@ -1,9 +1,9 @@
-#include <bits/stdc++.h>
+#include "bits/stdc++.h"
 using namespace std;
 using namespace std;
 typedef long long ll;
-typedef vector<int> vi; 
-typedef vector< vi > vvi; 
+typedef vector<ll> vli; 
+typedef vector< vli > vvli; 
 /////////////////////////
 #define F first
 #define S second
@@ -18,7 +18,7 @@ typedef vector< vi > vvi;
 #define printvop(n) loop(i,0,n.size()-1){printpair(n[i])<<endl;}
 #define fio ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
 #define endl "\n"
-long long int mod=1000000007;
+long long mod=1000000007;
 //////////////////////////
 int main()
 {
@@ -32,14 +32,20 @@ int main()
     cin >> t;
     while(t--)
     {
-        string s;
-        cin>>s;
-        int xx=s.length();
-        for(int i=0;i<xx;i+=2){
-        	cout<<s[i];
+        ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
+        string s,r;
+        cin>>x>>y>>n;
+        ll xxx=n%x;
+        if(xxx==y){
+            cout<<n<<endl;
         }
-        cout<<s[xx-1];
-        cout<<endl;
+        else if(xxx>y){
+            cout<<n-xxx+y<<endl;
+        }
+        else{
+            cout<<n-xxx-x+y<<endl;
+        }
+        
 //       printvector(arr);
 //        sort(arr.begin(),arr.end());
 
