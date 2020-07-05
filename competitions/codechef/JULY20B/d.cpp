@@ -42,24 +42,42 @@ int main()
     cin >> t;
     while(t--)
     {
-        ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
+        ll a,b,p,q,n,m,k,sum=0,ans=0,res=0;
         string s,r;
         cin>>n;
-        vector<int> arr(n);
-        loop(i,0,n)
+        map<ll,ll> cntx;
+        map <ll,ll> cnty;
+        for(int i=1;i<4*n;i++)
         {
-            cin>>arr[i];
+            ll t1,t2;
+            cin>>t1>>t2;
+            cntx[t1]++;
+            cnty[t2]++;
         }
-		for (int i = 0; i < n-1; ++i)
-		        {
-		        	/* code */
-		        	ans+=abs(arr[i+1]-arr[i])-1;
-		        }        
-//       printvector(arr);
-//        sort(arr.begin(),arr.end());
-cout<<ans<<endl;
+        ll x,y;
+        auto it=cntx.begin();
+         auto it1=cnty.begin();
+        while(it!=cntx.end())
+        {
+           if((it->second)%2!=0)
+           {
+               x=it->first;
+               break;
+           }
 
+            it++;
+        }
+        while(it1!=cntx.end())
+        {
+           if((it1->second)%2!=0)
+           {
+               y=it1->first;
+               break;
+           }
+
+            it1++;
+        }
+        out2(x,y);
     }
     return 0;
 }
-

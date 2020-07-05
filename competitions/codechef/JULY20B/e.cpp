@@ -42,24 +42,55 @@ int main()
     cin >> t;
     while(t--)
     {
-        ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
+        ll a,b,p,q,n,m,k,sum=0,ans=0,res=0;
         string s,r;
         cin>>n;
-        vector<int> arr(n);
-        loop(i,0,n)
+        map<ll,ll> cntx;
+        map <ll,ll> cnty;
+        map <ll,ll> cntdiff;
+        for(int i=0;i<n;i++)
         {
-            cin>>arr[i];
+            ll t1;
+            cin>>t1;
+            cntx[t1]++;
+            cntdiff[t1]++;
         }
-		for (int i = 0; i < n-1; ++i)
-		        {
-		        	/* code */
-		        	ans+=abs(arr[i+1]-arr[i])-1;
-		        }        
-//       printvector(arr);
-//        sort(arr.begin(),arr.end());
-cout<<ans<<endl;
+        for(int i=0;i<n;i++)
+        {
+            ll t1;
+            cin>>t1;
+            cnty[t1]++;
+            cntdiff[t1]--;
+        }
+        ll x,y;
+        auto it=cntdiff.begin();
+         auto it1=cnty.begin();
+        while(it!=cntdiff.end())
+        {
+           if((abs(it->second))%2==1)
+           {
+               x=it->first;
+               res=69;
+               break;
+           }
+           else{
+            ans+=(abs(it->second))/2;
+           }
 
+            it++;
+        }
+       
+        if(res==69){
+            cout<<-1<<endl;
+        }
+        else{
+            if(ans%2){
+                cout<<-1<<endl;
+            }
+            else{
+            cout<<ans/2<<endl;}
+        }
+        
     }
     return 0;
 }
-

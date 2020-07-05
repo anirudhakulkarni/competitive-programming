@@ -45,19 +45,58 @@ int main()
         ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
         string s,r;
         cin>>n;
-        vector<int> arr(n);
-        loop(i,0,n)
-        {
-            cin>>arr[i];
+        ll aa=1;
+        ans=n/8;
+        cout<<'O';
+        
+            res=n%8;
+      
+
+        if(ans>=1){
+            cout<<"......."<<endl;
+           
+                    for (int i = 1; i < ans; ++i)
+                    {
+                        /* code */
+                        cout<<"........"<<endl;
+
+                    }
+                    for (int i = 0; i < res; ++i)
+                        {
+                            /* code */cout<<".";
+                        }
+                       if(n!=64){ for (int i = res; i < 8; ++i)
+                                               {
+                                                   /* code */cout<<"X";
+                                               }
+                                               cout<<endl;}
+
+                    for (int i = ans+1; i < 8; ++i)
+                    {
+                        /* code */cout<<"XXXXXXXX"<<endl;
+                    }
+            cout<<endl;
         }
-		for (int i = 0; i < n-1; ++i)
-		        {
-		        	/* code */
-		        	ans+=abs(arr[i+1]-arr[i])-1;
-		        }        
+        else{
+            for (int i = 0; i < res-1; ++i)
+            {
+                /* code */cout<<".";
+            }
+            for (int i = res; i < 8; ++i)
+            {
+                /* code */cout<<"X";
+            }
+            cout<<endl;
+            for (int i = ans+1; i < 8; ++i)
+                    {
+                        /* code */cout<<"XXXXXXXX"<<endl;
+                    }
+            cout<<endl;
+        }
+
 //       printvector(arr);
 //        sort(arr.begin(),arr.end());
-cout<<ans<<endl;
+
 
     }
     return 0;

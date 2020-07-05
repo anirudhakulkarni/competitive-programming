@@ -42,22 +42,19 @@ int main()
     cin >> t;
     while(t--)
     {
-        ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
-        string s,r;
-        cin>>n;
-        vector<int> arr(n);
-        loop(i,0,n)
-        {
-            cin>>arr[i];
+        ll n,r,ans;
+        
+        cin>>n>>r;
+        if(n>r){
+            ans=(r*(r+1))/2;
         }
-		for (int i = 0; i < n-1; ++i)
-		        {
-		        	/* code */
-		        	ans+=abs(arr[i+1]-arr[i])-1;
-		        }        
+        else{
+            ans=(n*(n-1))/2+1;   
+        }
+        cout<<ans<<endl;
 //       printvector(arr);
 //        sort(arr.begin(),arr.end());
-cout<<ans<<endl;
+
 
     }
     return 0;

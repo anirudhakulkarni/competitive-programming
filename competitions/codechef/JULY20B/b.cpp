@@ -42,22 +42,44 @@ int main()
     cin >> t;
     while(t--)
     {
-        ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
-        string s,r;
+        ll n,ans=0,sum=0;
         cin>>n;
-        vector<int> arr(n);
-        loop(i,0,n)
-        {
-            cin>>arr[i];
+        while(n--){
+            string s,r;
+            cin>>s>>r;
+            ll n1=s.length();
+            ll n2=r.length();
+            ll sum1=0,ans1=0;
+            for (int i = 0; i < n1; ++i)
+            {
+                ans1+=(int)(s[i]-'0');
+            }
+            for (int i = 0; i < n2; ++i)
+            {
+                sum1+=(int)(r[i]-'0');
+            }
+            if(ans1>sum1){
+                ans++;
+            }
+            else if(ans1<sum1){
+                sum++;
+            }
+            else{
+                ans++;sum++;
+            }
         }
-		for (int i = 0; i < n-1; ++i)
-		        {
-		        	/* code */
-		        	ans+=abs(arr[i+1]-arr[i])-1;
-		        }        
+        if(ans>sum){
+            out2(0,ans);
+        }
+        if(sum>ans){
+            out2(1,sum);
+        }
+        if(sum==ans){
+            out2(2,ans);
+        }
 //       printvector(arr);
 //        sort(arr.begin(),arr.end());
-cout<<ans<<endl;
+
 
     }
     return 0;

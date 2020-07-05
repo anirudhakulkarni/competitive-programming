@@ -1,3 +1,4 @@
+
 #include "bits/stdc++.h"
 using namespace std;
 using namespace std;
@@ -27,7 +28,7 @@ typedef vector< vli > vvli;
 #define out4(x1,x2,x3,x4) cout << x1 << " " << x2 << " " << x3 << " " << x4 << ln
 #define out5(x1,x2,x3,x4,x5) cout << x1 << " " << x2 << " " << x3 << " " << x4 << " " << x5 << ln
 #define out6(x1,x2,x3,x4,x5,x6) cout << x1 << " " << x2 << " " << x3 << " " << x4 << " " << x5 << " " << x6 << ln
-long long mod=1000000007;
+
 //////////////////////////
 int main()
 {
@@ -42,22 +43,28 @@ int main()
     cin >> t;
     while(t--)
     {
-        ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
+        long double a,b,x,y,p,c,q,n,m,k;
+        long long sum,ans,res=0;
         string s,r;
-        cin>>n;
-        vector<int> arr(n);
-        loop(i,0,n)
-        {
-            cin>>arr[i];
+        cin>>a>>b>>c;
+        if(c<=a){
+            ans=-1;
+            sum=b;
         }
-		for (int i = 0; i < n-1; ++i)
-		        {
-		        	/* code */
-		        	ans+=abs(arr[i+1]-arr[i])-1;
-		        }        
+        else{
+            ans=1;
+            double xx =c/b;
+            if(xx<a){
+                sum=b;
+            }
+            else{
+                sum=-1;
+            }
+        }
+        out2(ans,sum);
 //       printvector(arr);
 //        sort(arr.begin(),arr.end());
-cout<<ans<<endl;
+
 
     }
     return 0;

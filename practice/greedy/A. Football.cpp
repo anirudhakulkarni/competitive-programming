@@ -1,9 +1,9 @@
 #include "bits/stdc++.h"
 using namespace std;
-using namespace std;
 typedef long long ll;
 typedef vector<ll> vli; 
-typedef vector< vli > vvli; 
+typedef vector< vli > vvli;
+
 /////////////////////////
 #define F first
 #define S second
@@ -11,11 +11,9 @@ typedef vector< vli > vvli;
 #define MP make_pair
 #define loop(i,a,b) for (ll i = a; i < b; i++)
 //////////////////////////
-#define printvector(n) for(int i=0;i<n.size();i++){cout<<n[i]<<" ";}cout<<'\n'
-#define printstack(n) for(int i=0;i<n.size();i++){cout<<n[i]<<" ";}cout<<'\n'
+#define printvector(n) for(ll i=0;i<n.size();i++){cout<<n[i]<<" ";}cout<<'\n'
+#define printstack(n) for(ll i=0;i<n.size();i++){cout<<n[i]<<" ";}cout<<'\n'
 #define PI_val 3.14159265359
-#define vasort(v) sort((v).begin(), (v).end())
-#define vdsort(v) sort((v).begin(), (v).end(),greater<int>())
 #define printpair(n) cout<<n.F<<" "<<n.S
 #define printvop(n) loop(i,0,n.size()-1){printpair(n[i])<<endl;}
 #define fio ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
@@ -27,7 +25,9 @@ typedef vector< vli > vvli;
 #define out4(x1,x2,x3,x4) cout << x1 << " " << x2 << " " << x3 << " " << x4 << ln
 #define out5(x1,x2,x3,x4,x5) cout << x1 << " " << x2 << " " << x3 << " " << x4 << " " << x5 << ln
 #define out6(x1,x2,x3,x4,x5,x6) cout << x1 << " " << x2 << " " << x3 << " " << x4 << " " << x5 << " " << x6 << ln
-long long mod=1000000007;
+ll mod=1000000007;
+#define vasort(v) sort((v).begin(), (v).end())
+#define vdsort(v) sort((v).begin(), (v).end(),greater<ll>())
 //////////////////////////
 int main()
 {
@@ -38,28 +38,28 @@ int main()
     freopen("E:/codes/testcases/output.in", "w", stdout);
     #endif
     fio;
-    ll t;
-    cin >> t;
-    while(t--)
+    ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
+    string s,r;
+    
+    cin >> s;
+n=s.length();
+    for (int i = 0; i < n-6; ++i)
     {
-        ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
-        string s,r;
-        cin>>n;
-        vector<int> arr(n);
-        loop(i,0,n)
-        {
-            cin>>arr[i];
+        ll xx=s[i],an=0;
+        for(int j=i+1;j<i+8;j++){
+            if(xx==s[j]){
+                an++;
+            }
+            else{
+                break;
+            }
         }
-		for (int i = 0; i < n-1; ++i)
-		        {
-		        	/* code */
-		        	ans+=abs(arr[i+1]-arr[i])-1;
-		        }        
-//       printvector(arr);
-//        sort(arr.begin(),arr.end());
-cout<<ans<<endl;
-
+        if(an>=6){
+            cout<<"YES";
+            return 0;
+        }
     }
+
+    cout<<"NO";
     return 0;
 }
-

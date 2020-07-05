@@ -31,37 +31,23 @@ int main()
     ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
     string s,r;
     cin>>s;
-    cin >> n;
-    vector<int>dp(s.size());
-    for (int i = 0; i < s.size(); ++i)
+    cin >> q;
+    n=s.size();
+    vector<ll> solarr(n);
+    solarr[0]=0;
+    for (int i = 1; i < n; ++i)
     {
-    	/* code */dp[i]=-1;
+        /* code */solarr[i]=solarr[i-1]+(s[i]==s[i-1]);
+                    
+    
     }
-    int qq=n;    
-    while(qq--){
-    	ll xxx,yyy,answer=0;
-    	cin>>xxx>>yyy;
-
-    	for (int i = xxx-1; i < yyy-1; ++i)
-    	{
-
-    		if(dp[i]!=-1){
-    			answer+=dp[i];
-    		}
-    		else{/* code */
-
-    			if(s[i]==s[i+1]){
-    			dp[i]=1;
-    			}
-    			else{
-    			dp[i]=0;
-    			}
-    			answer+=dp[i];
-    		}
-    	}
-    	cout<<answer<<endl;
+    while(q--){
+ll l,r;
+cin>>l>>r;
+cout<<solarr[r-1]-solarr[l-1]<<endl;
 
     }
+
     //       printvector(arr);
     //        sort(arr.begin(),arr.end());
     

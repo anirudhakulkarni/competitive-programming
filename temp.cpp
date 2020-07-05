@@ -44,20 +44,22 @@ int main()
     {
         ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
         string s,r;
-        cin>>n;
-        vector<int> arr(n);
-        loop(i,0,n)
-        {
-            cin>>arr[i];
+        cin>>a>>b>>n;
+        while(a<=n &&b<=n){
+        	if(a<b){
+        		b=b+a;
+        		a=b-a;
+        	}
+        	else{
+        		a=a+b;
+        		b=a-b;
+        	}
+        	ans++;
         }
-		for (int i = 0; i < n-1; ++i)
-		        {
-		        	/* code */
-		        	ans+=abs(arr[i+1]-arr[i])-1;
-		        }        
+	cout<<ans<<endl;        
 //       printvector(arr);
 //        sort(arr.begin(),arr.end());
-cout<<ans<<endl;
+
 
     }
     return 0;

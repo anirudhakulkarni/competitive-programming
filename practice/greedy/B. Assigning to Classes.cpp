@@ -44,21 +44,18 @@ int main()
     {
         ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
         string s,r;
-        cin>>n;
-        vector<int> arr(n);
-        loop(i,0,n)
+        cin>>n;        m=2*n;
+
+        vector<int> arr(m);
+        loop(i,0,m)
         {
             cin>>arr[i];
         }
-		for (int i = 0; i < n-1; ++i)
-		        {
-		        	/* code */
-		        	ans+=abs(arr[i+1]-arr[i])-1;
-		        }        
+        
 //       printvector(arr);
-//        sort(arr.begin(),arr.end());
-cout<<ans<<endl;
-
+        sort(arr.begin(),arr.end());
+        ll xx=arr[n]-arr[n-1];
+cout<<xx<<endl;
     }
     return 0;
 }
