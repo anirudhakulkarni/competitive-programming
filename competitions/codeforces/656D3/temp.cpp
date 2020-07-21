@@ -29,6 +29,34 @@ ll mod=1000000007;
 #define vasort(v) sort((v).begin(), (v).end())
 #define vdsort(v) sort((v).begin(), (v).end(),greater<ll>())
 //////////////////////////
+int mostFrequent(int arr[], int n) 
+{ 
+    // Sort the array 
+    sort(arr, arr + n); 
+  
+    // find the max frequency using linear traversal 
+    int max_count = 1, res = arr[0], curr_count = 1; 
+    for (int i = 1; i < n; i++) { 
+        if (arr[i] == arr[i - 1]) 
+            curr_count++; 
+        else { 
+            if (curr_count > max_count) { 
+                max_count = curr_count; 
+                res = arr[i - 1]; 
+            } 
+            curr_count = 1; 
+        } 
+    } 
+  
+    // If last element is most frequent 
+    if (curr_count > max_count) 
+    { 
+        max_count = curr_count; 
+        res = arr[n - 1]; 
+    } 
+  
+    return res; 
+} 
 int main()
 {
     #ifndef ONLINE_JUDGE
@@ -41,15 +69,13 @@ int main()
     ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
     string s,r;
     cin >> n;
-    ll arr2[n][3];
+    ll arr2[n];
     for(ll i=0;i<n;i++){
         ll arr[3];
         cin>>arr[0]>>arr[1]>>arr[2];
         sort(arr,arr+3);
         ll abc=__gcd(__gcd(arr[0],arr[1]),arr[2]);
-        arr2[i][0]=arr[0]/abc;
-        arr2[i][1]=arr[1]/abc;
-        arr2[i][2]=arr[2]/abc;
+        arr2[i]=
        
 
     }
