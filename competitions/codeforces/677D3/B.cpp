@@ -32,13 +32,36 @@ int main()
     cin >> t;
     while(t--)
     {
-        ll a;
-        cin>>a;
-        cout<<a*10000;
+        int n;
+        cin>>n;
+                vector<ll> arr(n);
+                loop(i,0,n)
+                {
+                    cin>>arr[i];
+                }
+        int first=0;
+        int last=n-1;
+        while(first<=last &&arr[first]!=1){
+            first++;
+        }
+        while(last>=first && arr[last]!=1){
+            last--;
+        }
+        int ans=0;
+        for (int i = first; i < last; ++i)
+        {
+            /* code */if(arr[i]==0){
+            ans++;
+                }
+        }
 
+        //       printvector(arr);
+        //        sort(arr.begin(),arr.end());
+        
 //       printvector(arr);
 //        sort(arr.begin(),arr.end());
-
+cout<<ans<<endl;
+        
 
     }
     return 0;

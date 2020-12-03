@@ -45,43 +45,21 @@ int main()
         ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
         string s,r;
         cin>>n;
-        vector<int> arr(n);
-        loop(i,0,n)
-        {
-            cin>>arr[i];
+        int i=2;
+        if(n==1){
+        	cout<<0<<endl; continue;
         }
-        int i=0;
-        int flag=0;
-        while(i<n-1){
-        	if(arr[i]!=arr[i+1]){
-        		flag=1;
-        		break;
-        	}
-        	i++;
+        if(n==2){
+        	out1(1);continue;
         }
-        if(flag==0){
-        	cout<<"NO"<<endl;
-        	continue;
+        if(n==3){
+        	out1(2);continue;
         }
-        cout<<"YES\n";
-        for (int i = 0; i < n; ++i)
-        {
-        	/* code */if(arr[0]!=arr[i]){
-        	out2(1,i+1);
-        	}
+        if(n%2==0){
+        	out1(2);continue;
         }
-        for (int i = 0; i < n; ++i)
-        {
-        	/* code */if(arr[0]!=arr[i]){
-        		for (int j = 1; j < n; ++j)
-        		{
-        			/* code */
-        			if(arr[0]==arr[j]){
-        				out2(i+1,j+1);
-        			}
-        		}
-        		break;
-        	}
+        else{
+        	out1(3);continue;
         }
 //       printvector(arr);
 //        sort(arr.begin(),arr.end());

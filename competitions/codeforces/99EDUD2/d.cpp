@@ -29,6 +29,15 @@ typedef vector< vli > vvli;
 #define out6(x1,x2,x3,x4,x5,x6) cout << x1 << " " << x2 << " " << x3 << " " << x4 << " " << x5 << " " << x6 << ln
 long long mod=1000000007;
 //////////////////////////
+bool issorted(vector<ll> arr){
+    for (int i = 0; i < arr.size()-1; ++i)
+    {
+        if(arr[i]>arr[i+1]){
+            return false;
+        }
+    }
+    return true;
+}
 int main()
 {
     #ifndef ONLINE_JUDGE
@@ -42,50 +51,48 @@ int main()
     cin >> t;
     while(t--)
     {
-        ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
+        ll a=0,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0,maxsofar=0;
         string s,r;
-        cin>>n;
-        vector<int> arr(n);
-        loop(i,0,n)
-        {
-            cin>>arr[i];
-        }
-        int i=0;
-        int flag=0;
-        while(i<n-1){
-        	if(arr[i]!=arr[i+1]){
-        		flag=1;
-        		break;
-        	}
-        	i++;
-        }
-        if(flag==0){
-        	cout<<"NO"<<endl;
-        	continue;
-        }
-        cout<<"YES\n";
-        for (int i = 0; i < n; ++i)
-        {
-        	/* code */if(arr[0]!=arr[i]){
-        	out2(1,i+1);
-        	}
-        }
-        for (int i = 0; i < n; ++i)
-        {
-        	/* code */if(arr[0]!=arr[i]){
-        		for (int j = 1; j < n; ++j)
-        		{
-        			/* code */
-        			if(arr[0]==arr[j]){
-        				out2(i+1,j+1);
-        			}
-        		}
-        		break;
-        	}
-        }
-//       printvector(arr);
-//        sort(arr.begin(),arr.end());
-
+        cin>>n>>x;
+                vector<ll> arr(n);
+                loop(i,0,n)
+                {
+                    cin>>arr[i];
+                }
+                int ii=0,ji=n-1;
+                // while(ii<n){
+                //     if(arr[ii]>x){
+                //         break;
+                //     }
+                //     ii++;
+                // }
+                
+                for (int i = 0; i < n-1; ++i)
+                {
+                    /* code */
+                    if(issorted(arr)){
+                        break;
+                    }
+                    if(arr[i]>x){
+                        ll temp =arr[i];
+                        arr[i]=x;
+                        x=temp;
+                        sum++;
+                    }
+                }
+                for (int i = 0; i < n-1; ++i)
+                {
+                    /* code */
+                    if(arr[i]>arr[i+1]){
+                        sum=-1;
+                        break;
+                    }
+                }
+                
+                    cout<<sum<<endl;
+        //       printvector(arr);
+//                sort(arr.begin(),arr.end());
+        
 
     }
     return 0;

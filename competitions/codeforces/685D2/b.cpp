@@ -44,45 +44,43 @@ int main()
     {
         ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
         string s,r;
-        cin>>n;
-        vector<int> arr(n);
-        loop(i,0,n)
-        {
-            cin>>arr[i];
-        }
-        int i=0;
-        int flag=0;
-        while(i<n-1){
-        	if(arr[i]!=arr[i+1]){
-        		flag=1;
-        		break;
-        	}
-        	i++;
-        }
-        if(flag==0){
-        	cout<<"NO"<<endl;
-        	continue;
-        }
-        cout<<"YES\n";
-        for (int i = 0; i < n; ++i)
-        {
-        	/* code */if(arr[0]!=arr[i]){
-        	out2(1,i+1);
-        	}
-        }
-        for (int i = 0; i < n; ++i)
-        {
-        	/* code */if(arr[0]!=arr[i]){
-        		for (int j = 1; j < n; ++j)
-        		{
-        			/* code */
-        			if(arr[0]==arr[j]){
-        				out2(i+1,j+1);
-        			}
+        cin>>n>>q;
+        string arr;
+        cin>>arr;
+        while(q--){
+        	int aa1,bb1;
+        	cin>>aa1>>bb1;
+        	aa1--;
+        	bb1--;
+        	int aa=aa1;
+        	int bb=bb1;
+
+        	ans=0;
+        	while(aa>0){
+        		if(arr[aa-1]==arr[aa1]){
+        			cout<<"YES\n";
+        			ans=1;
+        			break;
         		}
-        		break;
+        		aa--;
         	}
+        	if(ans==1){
+        		continue;
+        	}
+        	while(bb<n-1){
+        		if(arr[bb+1]==arr[bb1]){
+        			cout<<"YES\n";
+        			ans=1;
+        			break;
+        		}
+        		bb++;
+        	}
+        	if(ans==0){
+        		cout<<"NO\n";
+        	}
+
         }
+        
 //       printvector(arr);
 //        sort(arr.begin(),arr.end());
 

@@ -1,6 +1,6 @@
 import os
 path=os.getcwd()
-ans=[]
+deleted_list=[]
 while True:
     for root, dirs, files in os.walk(path):
     	if('.git' in dirs):
@@ -11,12 +11,13 @@ while True:
     	for currentFile in files:
     		#print(root)
     		print (" processing file: "+root + currentFile)
-    		exts = ('.exe')
+    		exts = ('.exe','.class')
     		if currentFile.lower().endswith(exts):
-    		    ans+=[str(root+currentFile)]
+    		    deleted_list+=[str(root+currentFile)]
     		    print("Deleting "+root+" "+currentFile)
     		    os.remove(os.path.join(root, currentFile))
     break
-print(ans)
+print("Deleted items:")
+print(deleted_list)
 print("Press any key to continue ")
 a=input()
