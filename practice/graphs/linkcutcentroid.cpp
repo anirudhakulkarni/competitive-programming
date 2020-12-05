@@ -12,7 +12,7 @@ typedef vector< vli > vvli;
 #define loop(i,a,b) for (ll i = a; i < b; i++)
 //////////////////////////
 #define printvector(n) for(ll i=0;i<n.size();i++){cout<<n[i]<<" ";}cout<<'\n'
-#define printstack(n) for(ll i=0;i<n.size();i++){cout<<n[i]<<" ";}cout<<'\n'
+#define printstack(n) for(long long i=0;i<n.size();i++){cout<<n[i]<<" ";}cout<<'\n'
 #define PI_val 3.14159265359
 #define printpair(n) cout<<n.F<<" "<<n.S
 #define printvop(n) loop(i,0,n.size()-1){printpair(n[i])<<endl;}
@@ -28,14 +28,51 @@ typedef vector< vli > vvli;
 ll mod=1000000007;
 #define vasort(v) sort((v).begin(), (v).end())
 #define vdsort(v) sort((v).begin(), (v).end(),greater<ll>())
-
+vector<ll> adj[100005];
+int visited[100005]={0};
+int visited2[100005]={0};
 //////////////////////////
-void dfs(int v,int ctime){
-	ctime++;
-	starting_time[v].PB(ctime);
+
+void dfs(int v){
+	stack<ll> s;
+	s.push(v);
+	while(!s.empty()){
+		int newv=s.top();
+		s.pop();
+		if(visited[newv]==0){
+			cout<<newv<<" ";//PROCESS HERE
+		}
+		visited[newv]=1;
+		for (ll y:adj[newv])
+		{
+			if(!visited[y]){
+				s.push(y);
+			}
+		}
+	}
+	cout<<endl;
 
 }
 
+void bfs(int v){
+	queue<ll> s;
+	s.push(v);
+	while(!s.empty()){
+		int newv=s.front();
+		s.pop();
+		if(visited2[newv]==0){
+			cout<<newv<<" "; //PROCESS HERE
+		}
+		visited2[newv]=1;
+		for (ll y:adj[newv])
+		{
+			if(!visited2[y]){
+				s.push(y);
+			}
+		}
+	}
+	cout<<endl;
+}
 int main()
 {
     #ifndef ONLINE_JUDGE
@@ -48,20 +85,27 @@ int main()
     ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
     string s,r;
     cin >> n;
-	vector<vector<ll>> adj(n+1);
-	vector<ll> arr(n);
-    loop(i,0,n)
+	loop(i,0,n-1)
     {
-        cin>>arr[i];
-        arr[i];
-        adj[i].PB(arr[i]);
-        adj[arr[i]].PB(i);
+        cin>>a>>b;
+        adj[a].PB(b);
+        adj[b].PB(a);
     }
-    vector<vector<double>> starting_time(n);
-    
+    for (int i = 1; i <= n; ++i)
+    {
+    	for (int ii = 0; ii < adj[i].size(); ++ii)
+    	{
+    		/* code */cout<<adj[i][ii]<<" ";
+    	}
+    	/* code */
+    	cout<<endl;
+    }
+    dfs(1);
+    bfs(1);
     //       printvector(arr);
     //        sort(arr.begin(),arr.end());
     
     
     return 0;
 }
+

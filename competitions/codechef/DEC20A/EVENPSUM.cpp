@@ -1,9 +1,10 @@
 #include "bits/stdc++.h"
+//don't copy this
+using namespace std;
 using namespace std;
 typedef long long ll;
 typedef vector<ll> vli; 
-typedef vector< vli > vvli;
-
+typedef vector< vli > vvli; 
 /////////////////////////
 #define F first
 #define S second
@@ -11,9 +12,11 @@ typedef vector< vli > vvli;
 #define MP make_pair
 #define loop(i,a,b) for (ll i = a; i < b; i++)
 //////////////////////////
-#define printvector(n) for(ll i=0;i<n.size();i++){cout<<n[i]<<" ";}cout<<'\n'
-#define printstack(n) for(ll i=0;i<n.size();i++){cout<<n[i]<<" ";}cout<<'\n'
+#define printvector(n) for(int i=0;i<n.size();i++){cout<<n[i]<<" ";}cout<<'\n'
+#define printstack(n) for(int i=0;i<n.size();i++){cout<<n[i]<<" ";}cout<<'\n'
 #define PI_val 3.14159265359
+#define vasort(v) sort((v).begin(), (v).end())
+#define vdsort(v) sort((v).begin(), (v).end(),greater<int>())
 #define printpair(n) cout<<n.F<<" "<<n.S
 #define printvop(n) loop(i,0,n.size()-1){printpair(n[i])<<endl;}
 #define fio ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
@@ -25,17 +28,8 @@ typedef vector< vli > vvli;
 #define out4(x1,x2,x3,x4) cout << x1 << " " << x2 << " " << x3 << " " << x4 << ln
 #define out5(x1,x2,x3,x4,x5) cout << x1 << " " << x2 << " " << x3 << " " << x4 << " " << x5 << ln
 #define out6(x1,x2,x3,x4,x5,x6) cout << x1 << " " << x2 << " " << x3 << " " << x4 << " " << x5 << " " << x6 << ln
-ll mod=1000000007;
-#define vasort(v) sort((v).begin(), (v).end())
-#define vdsort(v) sort((v).begin(), (v).end(),greater<ll>())
-
+long long mod=1000000007;
 //////////////////////////
-void dfs(int v,int ctime){
-	ctime++;
-	starting_time[v].PB(ctime);
-
-}
-
 int main()
 {
     #ifndef ONLINE_JUDGE
@@ -45,23 +39,32 @@ int main()
     freopen("E:/codes/testcases/output.in", "w", stdout);
     #endif
     fio;
-    ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
-    string s,r;
-    cin >> n;
-	vector<vector<ll>> adj(n+1);
-	vector<ll> arr(n);
-    loop(i,0,n)
+    ll t;
+    cin >> t;
+    while(t--)
     {
-        cin>>arr[i];
-        arr[i];
-        adj[i].PB(arr[i]);
-        adj[arr[i]].PB(i);
+        ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
+        string s,r;
+        cin>>a>>b;
+        if(a%2==1&&b%2==1){
+        	out1((a*b+1)/2);
+        }
+        if(a%2==0&&b%2==0){
+        	out1((a*b)/2);
+        }
+        if(a%2==1&&b%2==0){
+        	out1((2*a*b)/4);
+        }
+        if(a%2==0&&b%2==1){
+        	out1((2*a*b)/4);
+        }
+                
+
+//       printvector(arr);
+//        sort(arr.begin(),arr.end());
+
+
     }
-    vector<vector<double>> starting_time(n);
-    
-    //       printvector(arr);
-    //        sort(arr.begin(),arr.end());
-    
-    
     return 0;
 }
+
