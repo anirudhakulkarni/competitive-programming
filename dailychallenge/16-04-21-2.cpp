@@ -23,31 +23,6 @@ typedef vector< vli > vvli;
 #define out6(x1,x2,x3,x4,x5,x6) cout << x1 << " " << x2 << " " << x3 << " " << x4 << " " << x5 << " " << x6 << ln
 long long mod=1000000007;
 //////////////////////////
-bool solve(string s,int n){
-    ll total=0,mcount=0;
-
-    for (int i = 0; i < n; ++i)
-    {
-        if(s[i]=='T'){
-            total++;
-        }
-        if(s[i]=='M'){
-            total--;
-            mcount++;
-        }
-        if(total<0){//extra M
-            return false;
-        }
-        // if(total>mcount){
-        //     return false;
-        // }
-    }
-    if(total!=mcount){
-
-        return false;
-    }
-    return true;
-}
 int main()
 {
     #ifndef ONLINE_JUDGE
@@ -61,23 +36,50 @@ int main()
     cin >> t;
     while(t--)
     {
-        ll a,b,x,y,p,q,n,m,k,sum=0;
+        ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
         string s,r;
         cin>>n;
-        cin>>s;
+        vector<string> arr(n);
+        vector<pair<int,int>> ansarr;
         for (int i = 0; i < n; ++i)
         {
-            r+=s[n-i-1];
+            cin>>arr[i];
+            for (int j = 0; j < n; ++j)
+            {
+              if(arr[i][j]=='*'){
+                ansarr.push_back(make_pair(i,j));
+              }
+            }
         }
-        // cout<<r<<endl;
-        if(solve(s,n)&&solve(r,n)){
-            cout<<"YES"<<endl;
+        if(ansarr[0].second==ansarr[1].second){
+          if(ansarr[0].second<n-1){
+            arr[ansarr[0].first][ansarr[0].second+1]='*';
+            arr[ansarr[1].first][ansarr[0].second+1]='*';
+          }
+          else{
+            arr[ansarr[0].first][ansarr[0].second-1]='*';
+            arr[ansarr[1].first][ansarr[0].second-1]='*';
+          }
         }
-        else{
-            cout<<"NO"<<endl;
+        else if(ansarr[0].first==ansarr[1].first){
+          if(ansarr[0].first<n-1){
+            arr[ansarr[0].first+1][ansarr[0].second]='*';
+            arr[ansarr[0].first+1][ansarr[1].second]='*';
+          }
+          else{
+            arr[ansarr[0].first-1][ansarr[0].second]='*';
+            arr[ansarr[0].first-1][ansarr[1].second]='*';
+          }
         }
-
+        else {
+            arr[ansarr[0].first][ansarr[1].second]='*';
+            arr[ansarr[1].first][ansarr[0].second]='*';
+        }
 //        sort(arr.begin(),arr.end());
+                for (int i = 0; i < n; ++i)
+        {
+            cout<<arr[i]<<endl;
+          }
     }
     return 0;
 }

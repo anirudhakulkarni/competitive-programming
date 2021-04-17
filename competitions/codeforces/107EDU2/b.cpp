@@ -39,20 +39,53 @@ int main()
     cin >> t;
     while (t--)
     {
-        ll a, b, x, y, p, q, n, m, k, sum = 0, ans = 0, res = 0;
+        ll a, b, c, x, y, p, q, n, m, k, sum = 0, ans = 0, res = 0;
         string s, r;
-        cin >> n;
-        vector<int> arr(n);
-        for (int i = 0; i < n; ++i)
+        cin >> a >> b >> c;
+        for (int i = 0; i < c; i++)
         {
-            cin >> arr[i];
-            if (arr[i] == 1 || arr[i] == 3)
-            {
-                ans = 1;
-                res++;
-            }
+            ans = ans * 10 + 1;
         }
-        cout << res << endl;
+        // if (a == b && b != c)
+        // {
+        for (int i = 0; i < a - c + 1; i++)
+        {
+            s += '1';
+        }
+        for (int i = 0; i < c - 1; i++)
+        {
+            s += '0';
+        }
+        for (int i = 0; i < b - c; i++)
+        {
+            r += '1';
+        }
+        r += '2';
+        for (int i = 0; i < c - 1; i++)
+        {
+            r += '0';
+        }
+        // }
+        // else
+        // {
+        //     for (int i = 0; i < a - c + 1; i++)
+        //     {
+        //         s += '1';
+        //     }
+        //     for (int i = 0; i < c - 1; i++)
+        //     {
+        //         s += '0';
+        //     }
+        //     for (int i = 0; i < b - c + 1; i++)
+        //     {
+        //         r += '1';
+        //     }
+        //     for (int i = 0; i < c - 1; i++)
+        //     {
+        //         r += '0';
+        //     }
+        // }
+        cout << s << " " << r << endl;
         //        sort(arr.begin(),arr.end());
     }
     return 0;

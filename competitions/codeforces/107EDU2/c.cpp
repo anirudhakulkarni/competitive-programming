@@ -25,7 +25,25 @@ typedef vector<vli> vvli;
 #define out5(x1, x2, x3, x4, x5) cout << x1 << " " << x2 << " " << x3 << " " << x4 << " " << x5 << ln
 #define out6(x1, x2, x3, x4, x5, x6) cout << x1 << " " << x2 << " " << x3 << " " << x4 << " " << x5 << " " << x6 << ln
 long long mod = 1000000007;
+long long n;
 //////////////////////////
+vector<int> solve(vector<int> arr, int q)
+{
+    auto it = find(arr.begin(), arr.end(), q);
+    int index = it - arr.begin();
+    cout << index + 1 << " ";
+    vector<int> arr2(n);
+    arr2[0] = arr[index];
+    for (int i = 0; i < index; i++)
+    {
+        arr2[i + 1] = arr[i];
+    }
+    for (int i = index + 1; i < n; i++)
+    {
+        arr2[i] = arr[i];
+    }
+    return arr2;
+}
 int main()
 {
 #ifndef ONLINE_JUDGE
@@ -36,24 +54,23 @@ int main()
 #endif
     fio;
     ll t;
-    cin >> t;
-    while (t--)
+    // cin >> t;
+    // while (t--)
+    // {
+    ll a, b, c, x, y, p, q, m, k, sum = 0, ans = 0, res = 0;
+    string s, r;
+    cin >> n >> q;
+    vector<int> arr(n);
+    for (int i = 0; i < n; i++)
     {
-        ll a, b, x, y, p, q, n, m, k, sum = 0, ans = 0, res = 0;
-        string s, r;
-        cin >> n;
-        vector<int> arr(n);
-        for (int i = 0; i < n; ++i)
-        {
-            cin >> arr[i];
-            if (arr[i] == 1 || arr[i] == 3)
-            {
-                ans = 1;
-                res++;
-            }
-        }
-        cout << res << endl;
-        //        sort(arr.begin(),arr.end());
+        cin >> arr[i];
     }
+    for (int i = 0; i < q; i++)
+    {
+        cin >> ans;
+        arr = solve(arr, ans);
+    }
+    //        sort(arr.begin(),arr.end());
+    // }
     return 0;
 }

@@ -23,31 +23,6 @@ typedef vector< vli > vvli;
 #define out6(x1,x2,x3,x4,x5,x6) cout << x1 << " " << x2 << " " << x3 << " " << x4 << " " << x5 << " " << x6 << ln
 long long mod=1000000007;
 //////////////////////////
-bool solve(string s,int n){
-    ll total=0,mcount=0;
-
-    for (int i = 0; i < n; ++i)
-    {
-        if(s[i]=='T'){
-            total++;
-        }
-        if(s[i]=='M'){
-            total--;
-            mcount++;
-        }
-        if(total<0){//extra M
-            return false;
-        }
-        // if(total>mcount){
-        //     return false;
-        // }
-    }
-    if(total!=mcount){
-
-        return false;
-    }
-    return true;
-}
 int main()
 {
     #ifndef ONLINE_JUDGE
@@ -58,27 +33,28 @@ int main()
     #endif
     fio;
     ll t;
-    cin >> t;
-    while(t--)
-    {
-        ll a,b,x,y,p,q,n,m,k,sum=0;
+    // cin >> t;
+    // while(t--)
+    // {
+        ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
         string s,r;
-        cin>>n;
-        cin>>s;
-        for (int i = 0; i < n; ++i)
+        cin>>x>>y>>a>>b;
+        if(x<b){cout<<0<<endl; return 0;}
+        vector<pair<int,int>> ansarr;
+        for (ll i = max(a,b+1); i <x+1; ++i)
         {
-            r+=s[n-i-1];
+            for (ll j = b; j < min(i,y+1); ++j)
+            {
+                ansarr.push_back(make_pair(i,j));
+            }
         }
-        // cout<<r<<endl;
-        if(solve(s,n)&&solve(r,n)){
-            cout<<"YES"<<endl;
+        cout<<ansarr.size()<<endl;
+        for (int i = 0; i < ansarr.size(); ++i)
+        {
+            out2(ansarr[i].first,ansarr[i].second);
         }
-        else{
-            cout<<"NO"<<endl;
-        }
-
 //        sort(arr.begin(),arr.end());
-    }
+    // }
     return 0;
 }
 

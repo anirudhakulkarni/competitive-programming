@@ -23,31 +23,6 @@ typedef vector< vli > vvli;
 #define out6(x1,x2,x3,x4,x5,x6) cout << x1 << " " << x2 << " " << x3 << " " << x4 << " " << x5 << " " << x6 << ln
 long long mod=1000000007;
 //////////////////////////
-bool solve(string s,int n){
-    ll total=0,mcount=0;
-
-    for (int i = 0; i < n; ++i)
-    {
-        if(s[i]=='T'){
-            total++;
-        }
-        if(s[i]=='M'){
-            total--;
-            mcount++;
-        }
-        if(total<0){//extra M
-            return false;
-        }
-        // if(total>mcount){
-        //     return false;
-        // }
-    }
-    if(total!=mcount){
-
-        return false;
-    }
-    return true;
-}
 int main()
 {
     #ifndef ONLINE_JUDGE
@@ -61,22 +36,28 @@ int main()
     cin >> t;
     while(t--)
     {
-        ll a,b,x,y,p,q,n,m,k,sum=0;
+        ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
         string s,r;
-        cin>>n;
         cin>>s;
-        for (int i = 0; i < n; ++i)
+        cin>>r;
+        reverse(s.begin(), s.end());
+        reverse(r.begin(), r.end());
+        for (int i = 0; i <r.size(); i++)
         {
-            r+=s[n-i-1];
+        	if(r[i]=='1'){
+        		ans=i;
+        		break;
+        	}
         }
-        // cout<<r<<endl;
-        if(solve(s,n)&&solve(r,n)){
-            cout<<"YES"<<endl;
+        for (int i = 0; i <s.size(); i++)
+        {
+        	if(i>=ans && s[i]=='1'){
+        		res=i;
+        		break;
+        	}
         }
-        else{
-            cout<<"NO"<<endl;
-        }
-
+        // out2(res,ans);
+        cout<<res-ans<<endl;
 //        sort(arr.begin(),arr.end());
     }
     return 0;
