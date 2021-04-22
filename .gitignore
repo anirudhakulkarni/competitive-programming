@@ -1,3 +1,4 @@
 *.exe
 *.stackdump
 confg
+_pycache_

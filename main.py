@@ -1,4 +1,4 @@
-from retriever import Retriever
+from updater import Retriever
 
 def main():
 	spoj_pwd=open("confg",'r').read()
