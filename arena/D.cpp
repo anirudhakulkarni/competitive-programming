@@ -45,9 +45,9 @@ typedef vector<long long> vl;
 int main() {
     #ifndef ONLINE_JUDGE
     // for getting input from input.txt
-    freopen("../testcases/input.in", "r", stdin);
+    freopen("E:/codes/testcases/input.in", "r", stdin);
     // for writing output to output.txt
-    freopen("../testcases/output.in", "w", stdout);
+    freopen("E:/codes/testcases/output.in", "w", stdout);
     #endif
     zoom;
     ll t;
@@ -57,19 +57,8 @@ int main() {
         ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
         string s,r;
         cin>>n;
-        if(n%2050==0){
-        	ans=n/2050;
-        	s=to_string(ans);
-        	for (int i = 0; i < s.size(); ++i)
-        	{
-        		res+=s[i]-'0';
-        	}
-        	cout<<res<<endl;
-        }
-        else{
-        	out1(-1);
-        }
-
+        vl arr(n);
+        arrin(arr,n);
         //vasort(a);
     }
     return 0;

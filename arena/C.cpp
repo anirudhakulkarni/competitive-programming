@@ -41,7 +41,50 @@ typedef vector<long long> vl;
 #pragma GCC optimize("Ofast")
 #pragma GCC target("avx,avx2,fma")
 #pragma GCC optimization ("unroll-loops")
- 
+int ans[500][500]={0};
+ int solve(int n,vl occur,vl arr){
+    for (int i = 0; i < n; ++i)
+    {
+        // occur[i]--;
+        // ans[i][i]=arr[i];
+        stack<pair<int,int>> stack;
+        stack.push(make_pair(i,i));
+        while(occur[i]!=0 && !stack.empty()){
+        //     for (int i = 0; i < n; ++i)
+        // {
+        //     for (int j = 0; j < i+1; ++j)
+        //     {
+        //         cout<<ans[i][j]<<" ";
+        //     }
+        //     cout<<endl;
+        // }
+            // out2(i,occur[i]);
+            int jj=stack.top().second;
+            int ii=stack.top().first;
+            stack.pop();
+            if(jj>=0 && ii<n && ans[ii][jj]==0){
+                ans[ii][jj]=arr[i];
+                occur[i]--;
+                // out2(ii,jj);
+                if(jj-1>=0 && ans[ii][jj-1]==0){
+                    stack.push(make_pair(ii,jj-1));
+                }
+                else if(ii+1<n && ans[ii+1][jj]==0){
+                    stack.push(make_pair(ii+1,jj));
+                }
+
+            }
+            else{
+                return 0;
+            }
+        }
+        // if(occur[i]>0){
+        //     return 0;
+        // }
+    }
+
+    return 1;
+ }
 int main() {
     #ifndef ONLINE_JUDGE
     // for getting input from input.txt
@@ -50,27 +93,35 @@ int main() {
     freopen("../testcases/output.in", "w", stdout);
     #endif
     zoom;
-    ll t;
-    cin >> t;
-    while(t--)
+    // ll t;
+    // cin >> t;
+    // while(t--)
+    // {
+    ll a,b,x,y,p,q,n,m,k,sum=0,res=0;
+    string s,r;
+    cin>>n;
+    vl arr(n);
+    arrin(arr,n);
+    vl occur(n);
+    for (int i = 0; i < n; ++i)
     {
-        ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
-        string s,r;
-        cin>>n;
-        if(n%2050==0){
-        	ans=n/2050;
-        	s=to_string(ans);
-        	for (int i = 0; i < s.size(); ++i)
-        	{
-        		res+=s[i]-'0';
-        	}
-        	cout<<res<<endl;
+        occur[i]=arr[i];
+    }
+    // arrout(occur,n);
+    if(solve(n,occur,arr)){
+        for (int i = 0; i < n; ++i)
+        {
+            for (int j = 0; j < i+1; ++j)
+            {
+                cout<<ans[i][j]<<" ";
+            }
+            cout<<endl;
         }
-        else{
-        	out1(-1);
-        }
-
         //vasort(a);
     }
+    else{
+        cout<<-1<<endl;
+    }
+    // }
     return 0;
 }

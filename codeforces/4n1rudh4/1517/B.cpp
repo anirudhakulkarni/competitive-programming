@@ -41,7 +41,19 @@ typedef vector<long long> vl;
 #pragma GCC optimize("Ofast")
 #pragma GCC target("avx,avx2,fma")
 #pragma GCC optimization ("unroll-loops")
- 
+int getindex(int ii,vector<vector<ll>> nthplayer,int n){
+    for (int i = 0; i < n; ++i)
+    {
+        for (int j = 0; j < nthplayer[i].size(); ++j)
+        {
+            if(nthplayer[i][j]==ii){
+                return i;
+            }
+        }
+    }
+    return -1;
+}
+
 int main() {
     #ifndef ONLINE_JUDGE
     // for getting input from input.txt
@@ -56,20 +68,61 @@ int main() {
     {
         ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
         string s,r;
-        cin>>n;
-        if(n%2050==0){
-        	ans=n/2050;
-        	s=to_string(ans);
-        	for (int i = 0; i < s.size(); ++i)
-        	{
-        		res+=s[i]-'0';
-        	}
-        	cout<<res<<endl;
+        cin>>n>>m;
+        vector<vector<ll>> arr;
+        vector<ll> sortedarr;
+        for (ll i = 0; i < n; ++i)
+        {
+            vector<ll> temparr(m);
+            for (ll j = 0; j < m; ++j)
+            {
+                cin>>temparr[j];
+                sortedarr.push_back(temparr[j]);
+            }
+            arr.push_back(temparr);
         }
-        else{
-        	out1(-1);
+        vasort(sortedarr);
+        ll player=0;
+        int vis[100][100];
+        for (int i = 0; i < 100; ++i)
+        {
+            for (int j = 0; j < 100; ++j)
+            {
+                vis[i][j]=0;
+            }
         }
-
+        for (ll k = 0; k < m; ++k)
+        {
+            int found=0;
+            for (ll i = 0; i < n; ++i)
+            {
+                if(found){
+                    break;
+                }
+                for (ll j = 0; j < m; ++j)
+                {
+                    if(sortedarr[k]==arr[i][j] && vis[i][j]==0){
+                        ll tt=arr[i][k];
+                        arr[i][k]=arr[i][j];
+                        arr[i][j]=tt;
+                        vis[i][k]=1;
+                        // map[i][j]=player;
+                        // nthplayer[i].push_back(player);
+                        player++;
+                        found=1;
+                        break;
+                    }
+                }
+            }
+        }
+        for (ll i = 0; i < n; ++i)
+        {
+            for (ll j = 0; j < m; ++j)
+            {
+                cout<<arr[i][j]<<" ";
+            }
+            cout<<endl;
+        }
         //vasort(a);
     }
     return 0;
