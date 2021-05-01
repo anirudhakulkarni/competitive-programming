@@ -55,35 +55,40 @@ int main() {
     cin >> t;
     while(t--)
     {
-        ll a,b,x,y,p,w,r,q,n,m,k,sum=0,ans=0,res=0;
-        // string s,r;
-        cin>>n>>w>>r;
-        vl arr(n);
-        arrin(arr,n);
-        if(w<=r){
-            cout<<"YES\n";
-            continue;
-        }
-        ans=w-r;
-        vdsort(arr);
-        for (int i = 0; i < n-1; ++i)
-        {
-            if(arr[i]==arr[i+1]){
-                ans-=arr[i];
-                ans-=arr[i+1];
-                i++;
+        ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
+        string s,r;
+        cin>>n>>k;
+        if(n%2==1){
+            if(k>(n-1)/2){
+                cout<<-1<<endl;
+                continue;
             }
-            if(ans<=0){
-                res=1;
-                break;
+            for (int i = 1; i < k+1; ++i)
+            {
+                cout<<i<<" "<<n-i+1<<" ";
             }
-        }
-        if(res){
-            cout<<"YES\n";
+            for (int i = k+1; i < n-k+1; ++i)
+            {
+                cout<<i<<" ";
+            }
+            cout<<endl;
         }
         else{
-            cout<<"NO\n";
+            if(k>(n-2)/2){
+                cout<<-1<<endl;
+                continue;
+            }
+            for (int i = 1; i < k+1; ++i)
+            {
+                cout<<i<<" "<<n-i+1<<" ";
+            }
+            for (int i = k+1; i < n-k+1; ++i)
+            {
+                cout<<i<<" ";
+            }
+            cout<<endl;
         }
+        //vasort(a);
     }
     return 0;
 }

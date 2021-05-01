@@ -42,51 +42,31 @@ typedef vector<long long> vl;
 #pragma GCC optimize("Ofast")
 #pragma GCC target("avx,avx2,fma")
 #pragma GCC optimization ("unroll-loops")
- 
-int main() {
-    #ifndef ONLINE_JUDGE
-    // for getting input from input.txt
-    freopen("../testcases/input.in", "r", stdin);
-    // for writing output to output.txt
-    freopen("../testcases/output.in", "w", stdout);
-    #endif
-    zoom;
-    ll t;
-    cin >> t;
-    while(t--)
-    {
-        ll a,b,x,y,p,w,r,q,n,m,k,sum=0,ans=0,res=0;
-        // string s,r;
-        cin>>n>>w>>r;
-        vl arr(n);
-        arrin(arr,n);
-        if(w<=r){
-            cout<<"YES\n";
-            continue;
-        }
-        ans=w-r;
-        vdsort(arr);
-        for (int i = 0; i < n-1; ++i)
-        {
-            if(arr[i]==arr[i+1]){
-                ans-=arr[i];
-                ans-=arr[i+1];
-                i++;
-            }
-            if(ans<=0){
-                res=1;
-                break;
-            }
-        }
-        if(res){
-            cout<<"YES\n";
-        }
-        else{
-            cout<<"NO\n";
-        }
-    }
-    return 0;
+const int mod = 1e9 + 7, N = 2e5 + 1;
+long long fat[N];
+void solve() {
+	int n, cnt = 0, AND = -1;
+	cin >> n;
+	vector<int> a(n);
+	for(int i = 0; i < n; ++i) cin >> a[i];
+	sort(a.begin(), a.end());
+	for(int k = 0; k < n; ++k) {
+		AND = AND & a[k];
+		if(a[k] == a[0]) ++cnt;
+	}
+	if(AND != a[0] || cnt < 2) {
+		cout << "0\n";
+		return;
+	}
+	cout << cnt * (cnt - 1LL) % mod * fat[n - 2] % mod << '\n';
 }
-//vector<vector<int>> vec( n , vector<int> (m, 0));
-//think before you code
-//special cases
+int main() {
+	ios_base :: sync_with_stdio(false);
+	cin.tie(0);
+	fat[0] = 1;
+	for(int k = 1; k < N; ++k) fat[k] = k * fat[k - 1] % mod;
+	int t;
+	cin >> t;
+	while(t--) solve();
+	return 0;
+}

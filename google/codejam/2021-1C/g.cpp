@@ -43,6 +43,24 @@ typedef vector<long long> vl;
 #pragma GCC target("avx,avx2,fma")
 #pragma GCC optimization ("unroll-loops")
  
+ string band(string s){
+ 	string ans;
+ 	int found=0;
+ 	for (int i = 0; i < s.size(); ++i)
+ 	{
+ 		if(s[i]=='1' && !found){
+ 			continue;
+ 		}
+ 		if(s[i]=='1'){
+ 			ans+='0';
+ 		}
+ 		else{
+ 			found=1;
+ 			ans+='1';
+ 		}
+ 	}
+ 	return ans;
+ }
 int main() {
     #ifndef ONLINE_JUDGE
     // for getting input from input.txt
@@ -53,37 +71,35 @@ int main() {
     zoom;
     ll t;
     cin >> t;
-    while(t--)
+    for (int z = 1; z < t+1; ++z)
     {
-        ll a,b,x,y,p,w,r,q,n,m,k,sum=0,ans=0,res=0;
-        // string s,r;
-        cin>>n>>w>>r;
-        vl arr(n);
-        arrin(arr,n);
-        if(w<=r){
-            cout<<"YES\n";
-            continue;
-        }
-        ans=w-r;
-        vdsort(arr);
-        for (int i = 0; i < n-1; ++i)
-        {
-            if(arr[i]==arr[i+1]){
-                ans-=arr[i];
-                ans-=arr[i+1];
-                i++;
-            }
-            if(ans<=0){
-                res=1;
-                break;
-            }
+        ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
+        string s,r;
+        cin>>s>>r;
+        queue<string> ansq;
+        ansq.push(s);
+        while(!ansq.empty()){
+        	if(sum>=700000)break;
+        	s=ansq.front();
+        	ansq.pop();
+        	if(s==r){
+        		cout<<"Case #"<<z<<": "<<floor(log2(sum+1))<<endl;
+        		res=1;
+        		break;
+        	}
+        	ansq.push(band(s));
+        	// if(s.size()<=2*r.size())
+        	ansq.push(s+'0');
+        	sum++;
         }
         if(res){
-            cout<<"YES\n";
+        	continue;
         }
         else{
-            cout<<"NO\n";
+   	        cout<<"Case #"<<z<<": "<<"IMPOSSIBLE"<<endl;
+
         }
+        //vasort(a);
     }
     return 0;
 }

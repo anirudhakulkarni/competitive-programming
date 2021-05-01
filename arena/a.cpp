@@ -23,54 +23,51 @@ typedef vector<long long> vl;
 #define out4(x1,x2,x3,x4) cout << x1 << " " << x2 << " " << x3 << " " << x4 << ln
 #define out5(x1,x2,x3,x4,x5) cout << x1 << " " << x2 << " " << x3 << " " << x4 << " " << x5 << ln
 #define out6(x1,x2,x3,x4,x5,x6) cout << x1 << " " << x2 << " " << x3 << " " << x4 << " " << x5 << " " << x6 << ln
- 
+
 #define in1(x1) cin >> x1
 #define in2(x1,x2) cin >> x1 >> x2
 #define in3(x1,x2,x3) cin >> x1 >> x2 >> x3
 #define in4(x1,x2,x3,x4) cin >> x1 >> x2 >> x3 >> x4
 #define in5(x1,x2,x3,x4,x5) cin >> x1 >> x2 >> x3 >> x4 >> x5
 #define in6(x1,x2,x3,x4,x5,x6) cin >> x1 >> x2 >> x3 >> x4 >> x5 >> x6
- 
+
 #define mz(a)   memset(a,0,sizeof(a))
 #define arrin(a,n) forn(i,n) cin >> a[i];
 #define arrout(a,n) forn(i,n) {cout << a[i] << " ";} cout << ln;
+#define arr2out(a,n,m) forn(i,n){forn(j,m){cout << a[i][j] << " ";}cout << ln;}
 #define TYPEMAX(type)   std::numeric_limits<type>::max()
 #define TYPEMIN(type)   std::numeric_limits<type>::min()
- 
+
 #define zoom ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
 #pragma GCC optimize("Ofast")
 #pragma GCC target("avx,avx2,fma")
 #pragma GCC optimization ("unroll-loops")
- 
+
 int main() {
-    #ifndef ONLINE_JUDGE
+#ifndef ONLINE_JUDGE
     // for getting input from input.txt
     freopen("../testcases/input.in", "r", stdin);
     // for writing output to output.txt
     freopen("../testcases/output.in", "w", stdout);
-    #endif
+#endif
     zoom;
     ll t;
-    cin >> t;
-    while(t--)
-    {
-        ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
-        string s,r;
-        cin>>n;
-        if(n%2050==0){
-        	ans=n/2050;
-        	s=to_string(ans);
-        	for (int i = 0; i < s.size(); ++i)
-        	{
-        		res+=s[i]-'0';
-        	}
-        	cout<<res<<endl;
-        }
-        else{
-        	out1(-1);
-        }
-
-        //vasort(a);
+    // ci/
+    ll a, b, x, y, p, q, n, m, k, sum = 0, ans = 0, res = 0;
+    string s, r;
+    cin >> n;
+    // vl arr(n);
+    // arrin(arr,n);
+    if (n % 2 == 1) {
+        cout << 4 + ((n + 1) / 2 - 1) * 8  << endl;
     }
+    else {
+        cout << 4 << endl;
+    }
+    //vasort(a);
+    // }
     return 0;
 }
+//vector<vector<int>> vec( n , vector<int> (m, 0));
+//think before you code
+//special cases

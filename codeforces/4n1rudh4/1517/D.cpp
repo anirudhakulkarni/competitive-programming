@@ -51,40 +51,79 @@ int main() {
     freopen("../testcases/output.in", "w", stdout);
     #endif
     zoom;
-    ll t;
-    cin >> t;
-    while(t--)
-    {
-        ll a,b,x,y,p,w,r,q,n,m,k,sum=0,ans=0,res=0;
-        // string s,r;
-        cin>>n>>w>>r;
-        vl arr(n);
-        arrin(arr,n);
-        if(w<=r){
-            cout<<"YES\n";
-            continue;
-        }
-        ans=w-r;
-        vdsort(arr);
-        for (int i = 0; i < n-1; ++i)
+    // ll t;
+    // cin >> t;
+    // while(t--)
+    // {
+    ll a,b,x,y,p,q,h,w,k,sum=0,res=0;
+    string s,r;
+    cin>>h>>w>>k;
+    if(k&1){
+        for (int i = 0; i < h; ++i)
         {
-            if(arr[i]==arr[i+1]){
-                ans-=arr[i];
-                ans-=arr[i+1];
-                i++;
+            for (int j = 0; j < w; ++j)
+            {
+                cout<<-1<<" ";
             }
-            if(ans<=0){
-                res=1;
-                break;
-            }
+            cout<<endl;
         }
-        if(res){
-            cout<<"YES\n";
-        }
-        else{
-            cout<<"NO\n";
+        return 0;
+    }
+
+    vector<vector<int>> hor( h , vector<int> (w-1));
+    for (int i = 0; i < h; ++i)
+    {
+        for (int j = 0; j < w-1; ++j)
+        {
+            cin>>hor[i][j];
         }
     }
+    vector<vector<int>> ver( h-1 , vector<int> (w));
+    for (int i = 0; i < h-1; ++i)
+    {
+        for (int j = 0; j < w; ++j)
+        {
+            cin>>ver[i][j];
+        }
+    }
+    int steps=k>>1;
+    vector<vector<vector<int>>> ans(  steps+1, vector<vector<int>> (h,vector<int> (w,0)));
+    for (int itr = 1; itr <= steps; ++itr)
+    {
+        for (int i = 0; i < h; ++i)
+        {
+            for (int j = 0; j < w; ++j)
+            {
+                ans[itr][i][j]=(int) 1e9;
+                // up
+                if(i>0){
+                    ans[itr][i][j]=min(ans[itr][i][j],ans[itr-1][i-1][j]+2*ver[i-1][j]);
+                }
+                // right
+                if(j>0){
+                    ans[itr][i][j]=min(ans[itr][i][j],ans[itr-1][i][j-1]+2*hor[i][j-1]);
+                }
+                // down
+                if(i<h-1){
+                    ans[itr][i][j]=min(ans[itr][i][j],ans[itr-1][i+1][j]+2*ver[i][j]);
+                }
+                // left
+                if(j<w-1){
+                    ans[itr][i][j]=min(ans[itr][i][j],ans[itr-1][i][j+1]+2*hor[i][j]);
+                }
+            }
+        }
+    }
+    for (int i = 0; i < h; ++i)
+    {
+        for (int j = 0; j < w; ++j)
+        {
+            cout<<ans[steps][i][j]<<" ";
+        }
+        cout<<endl;
+    }
+        //vasort(a);
+    // }
     return 0;
 }
 //vector<vector<int>> vec( n , vector<int> (m, 0));

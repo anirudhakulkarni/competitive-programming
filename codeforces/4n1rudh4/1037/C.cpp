@@ -51,40 +51,32 @@ int main() {
     freopen("../testcases/output.in", "w", stdout);
     #endif
     zoom;
-    ll t;
-    cin >> t;
-    while(t--)
-    {
-        ll a,b,x,y,p,w,r,q,n,m,k,sum=0,ans=0,res=0;
-        // string s,r;
-        cin>>n>>w>>r;
-        vl arr(n);
-        arrin(arr,n);
-        if(w<=r){
-            cout<<"YES\n";
-            continue;
-        }
-        ans=w-r;
-        vdsort(arr);
-        for (int i = 0; i < n-1; ++i)
+    // ll t;
+    // cin >> t;
+    // while(t--)
+    // {
+        ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
+        string s,r;
+        cin>>n;
+        cin>>s>>r;
+        for (int i = 0; i < n; ++i)
         {
-            if(arr[i]==arr[i+1]){
-                ans-=arr[i];
-                ans-=arr[i+1];
+            if(i==n-1 && s[i]!=r[i]){
+                ans++;
+            }
+            else if(s[i]!=r[i] &&s[i+1]!=r[i+1] && s[i]!=s[i+1]){
+                ans++;
                 i++;
             }
-            if(ans<=0){
-                res=1;
-                break;
+            else if(s[i]!=r[i]){
+                ans++;
             }
+
+
         }
-        if(res){
-            cout<<"YES\n";
-        }
-        else{
-            cout<<"NO\n";
-        }
-    }
+        cout<<ans<<endl;
+        //vasort(a);
+    // }
     return 0;
 }
 //vector<vector<int>> vec( n , vector<int> (m, 0));

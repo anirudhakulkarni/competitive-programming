@@ -42,7 +42,7 @@ typedef vector<long long> vl;
 #pragma GCC optimize("Ofast")
 #pragma GCC target("avx,avx2,fma")
 #pragma GCC optimization ("unroll-loops")
- 
+
 int main() {
     #ifndef ONLINE_JUDGE
     // for getting input from input.txt
@@ -52,38 +52,53 @@ int main() {
     #endif
     zoom;
     ll t;
-    cin >> t;
-    while(t--)
+    vector<string> leftarr={};
+vl arr={};
+ll endp=10000;
+
+    for (int i = 1; i < endp+1; ++i)
     {
-        ll a,b,x,y,p,w,r,q,n,m,k,sum=0,ans=0,res=0;
-        // string s,r;
-        cin>>n>>w>>r;
-        vl arr(n);
-        arrin(arr,n);
-        if(w<=r){
-            cout<<"YES\n";
-            continue;
-        }
-        ans=w-r;
-        vdsort(arr);
-        for (int i = 0; i < n-1; ++i)
+        leftarr.push_back(to_string(i));
+    }
+    for (int i = 0; i < leftarr.size(); ++i)
+    {
+        string s=leftarr[i];
+        for (int j = i+1; j < leftarr.size(); ++j)
         {
-            if(arr[i]==arr[i+1]){
-                ans-=arr[i];
-                ans-=arr[i+1];
-                i++;
+            if(leftarr[j].size()+s.size()<19){
+                s+=leftarr[j];
+                arr.push_back(stol(s));
             }
-            if(ans<=0){
-                res=1;
+            else{
                 break;
             }
         }
-        if(res){
-            cout<<"YES\n";
+    }
+    vasort(arr);
+
+    cin >> t;
+    for (int z = 1; z < t+1; ++z)
+    {
+        ll a,b,x,y,p,q,n,m,k,sum=0,res=0;
+        string s,r;
+        cin>>n;
+        
+        for (int i = 0; i < arr.size(); ++i)
+        {
+            if(arr[i]==n){
+                        cout<<"Case #"<<z+1<<": "<<arr[i+1]<<endl;
+
+                sum=1;
+                break;
+            }
         }
-        else{
-            cout<<"NO\n";
+        if(sum==1){
+            continue;
         }
+        ll ans=arr[upper_bound(arr.begin(),arr.end(),n)-arr.begin()];
+        
+        cout<<"Case #" <<z<<": "<<arr[ans];
+        //vasort(a);
     }
     return 0;
 }

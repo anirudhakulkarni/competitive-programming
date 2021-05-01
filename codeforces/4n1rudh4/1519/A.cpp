@@ -55,35 +55,29 @@ int main() {
     cin >> t;
     while(t--)
     {
-        ll a,b,x,y,p,w,r,q,n,m,k,sum=0,ans=0,res=0;
+        ll r,l,d,y,p,q,n,m,k,sum=0,ans=0,res=0;
         // string s,r;
-        cin>>n>>w>>r;
-        vl arr(n);
-        arrin(arr,n);
-        if(w<=r){
-            cout<<"YES\n";
-            continue;
+        cin>>r>>l>>d;
+        // vl arr(n);
+        // arrin(arr,n);
+        // if(abs(r-l)<=d ){
+        //     cout<<"YES"<<endl;
+        // }
+        // else{
+        //     cout<<"NO"<<endl;
+        // }
+        if(r>l){
+            y=r;
+            r=l;
+            l=y;
         }
-        ans=w-r;
-        vdsort(arr);
-        for (int i = 0; i < n-1; ++i)
-        {
-            if(arr[i]==arr[i+1]){
-                ans-=arr[i];
-                ans-=arr[i+1];
-                i++;
-            }
-            if(ans<=0){
-                res=1;
-                break;
-            }
-        }
-        if(res){
-            cout<<"YES\n";
+        if((d+1)*r>=l){
+            cout<<"YES"<<endl;
         }
         else{
-            cout<<"NO\n";
+            cout<<"NO"<<endl;
         }
+        //vasort(a);
     }
     return 0;
 }
