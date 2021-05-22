@@ -42,24 +42,6 @@ typedef vector<long long> vl;
 #pragma GCC optimize("Ofast")
 #pragma GCC target("avx,avx2,fma")
 #pragma GCC optimization ("unroll-loops")
-int fact(int n) {
-    int ans = 1;
-    for (int i = 2; i < n + 1; ++i)
-    {
-        ans *= i;
-    }
-    return ans;
-}
-double func(int a, int b) {
-    // out2(a, b);
-    if ((a + b) % 2 == 1 or abs(a) > b) {
-        // cout << 00000000 << endl;
-        return 0;
-    }
-    // out2((a + b) / 2, (b - a) / 2);
-    return fact(b) / (fact((b + a) / 2) * fact((b - a) / 2));
-}
-
 
 int main() {
 #ifndef ONLINE_JUDGE
@@ -71,36 +53,22 @@ int main() {
     zoom;
     ll t;
     // cin >> t;
-    // while(t--)
+    // while (t--)
     // {
-    ll a, b, x, y, p, q, n, m, k, pf = 0, nf = 0, ps = 0, ns = 0, sum = 0, ans = 0, res = 0;
-    string s, r = "";
-    cin >> s >> r;
-    for (int i = 0; i < s.size(); ++i)
+    ll a, b, x, y, p, q, n, m, k, sum = 0, ans = 0, res = 0;
+    string s, r;
+    cin >> n >> k;
+    vl arr(n);
+    arrin(arr, n);
+    for (int i = 0; i < n; ++i)
     {
-        if (s[i] == '+') {
-            pf++;
-        }
-        else {
-            pf--;
-        }
-    }
-    for (int i = 0; i < s.size(); ++i)
-    {
-        if (r[i] == '+') {
-            ps++;
-        }
-        else if (r[i] == '-') {
-            ps--;
-        }
-        else {
+        if (5 - arr[i] >= k) {
             ans++;
         }
     }
-    // out3(pf, ps, ans);
-    cout.precision(16);
-    // cout << func(ps - pf, ans) << endl;
-    cout << (double)(func(ps - pf, ans) / (double)pow(2, ans) ) << endl;
+    cout << ans / 3 << endl;
+    //vasort(a);
+    // }
     return 0;
 }
 //vector<vector<int>> vec( n , vector<int> (m, 0));

@@ -42,24 +42,6 @@ typedef vector<long long> vl;
 #pragma GCC optimize("Ofast")
 #pragma GCC target("avx,avx2,fma")
 #pragma GCC optimization ("unroll-loops")
-int fact(int n) {
-    int ans = 1;
-    for (int i = 2; i < n + 1; ++i)
-    {
-        ans *= i;
-    }
-    return ans;
-}
-double func(int a, int b) {
-    // out2(a, b);
-    if ((a + b) % 2 == 1 or abs(a) > b) {
-        // cout << 00000000 << endl;
-        return 0;
-    }
-    // out2((a + b) / 2, (b - a) / 2);
-    return fact(b) / (fact((b + a) / 2) * fact((b - a) / 2));
-}
-
 
 int main() {
 #ifndef ONLINE_JUDGE
@@ -71,36 +53,34 @@ int main() {
     zoom;
     ll t;
     // cin >> t;
-    // while(t--)
+    // while (t--)
     // {
-    ll a, b, x, y, p, q, n, m, k, pf = 0, nf = 0, ps = 0, ns = 0, sum = 0, ans = 0, res = 0;
-    string s, r = "";
-    cin >> s >> r;
-    for (int i = 0; i < s.size(); ++i)
-    {
-        if (s[i] == '+') {
-            pf++;
-        }
-        else {
-            pf--;
-        }
-    }
-    for (int i = 0; i < s.size(); ++i)
-    {
-        if (r[i] == '+') {
-            ps++;
-        }
-        else if (r[i] == '-') {
-            ps--;
-        }
-        else {
-            ans++;
+    ll a, b, x, y, p, q, n, m, k, sum = 0, ans = 0, res = 0;
+    string s, r;
+    cin >> n;
+    vl arr(n);
+    arrin(arr, n);
+    vasort(arr);
+    if (arr[n - 1] > 0) {
+        cout << 1 << " " << arr[0] << endl;
+        cout << 1 << " " << arr[n - 1] << endl;
+        cout << n - 2 << " ";
+        for (int i = 1; i < n - 1; ++i)
+        {
+            cout << arr[i] << " ";
         }
     }
-    // out3(pf, ps, ans);
-    cout.precision(16);
-    // cout << func(ps - pf, ans) << endl;
-    cout << (double)(func(ps - pf, ans) / (double)pow(2, ans) ) << endl;
+    else {
+        cout << 1 << " " << arr[0] << endl;
+        cout << 2 << " " << arr[1] << " " << arr[2] << endl;
+        cout << n - 3 << " ";
+        for (int i = 3; i < n ; ++i)
+        {
+            cout << arr[i] << " ";
+        }
+    }
+    //vasort(a);
+    // }
     return 0;
 }
 //vector<vector<int>> vec( n , vector<int> (m, 0));

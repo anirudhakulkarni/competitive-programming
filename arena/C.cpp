@@ -23,57 +23,78 @@ typedef vector<long long> vl;
 #define out4(x1,x2,x3,x4) cout << x1 << " " << x2 << " " << x3 << " " << x4 << ln
 #define out5(x1,x2,x3,x4,x5) cout << x1 << " " << x2 << " " << x3 << " " << x4 << " " << x5 << ln
 #define out6(x1,x2,x3,x4,x5,x6) cout << x1 << " " << x2 << " " << x3 << " " << x4 << " " << x5 << " " << x6 << ln
- 
+
 #define in1(x1) cin >> x1
 #define in2(x1,x2) cin >> x1 >> x2
 #define in3(x1,x2,x3) cin >> x1 >> x2 >> x3
 #define in4(x1,x2,x3,x4) cin >> x1 >> x2 >> x3 >> x4
 #define in5(x1,x2,x3,x4,x5) cin >> x1 >> x2 >> x3 >> x4 >> x5
 #define in6(x1,x2,x3,x4,x5,x6) cin >> x1 >> x2 >> x3 >> x4 >> x5 >> x6
- 
+
 #define mz(a)   memset(a,0,sizeof(a))
 #define arrin(a,n) forn(i,n) cin >> a[i];
 #define arrout(a,n) forn(i,n) {cout << a[i] << " ";} cout << ln;
 #define arr2out(a,n,m) forn(i,n){forn(j,m){cout << a[i][j] << " ";}cout << ln;}
 #define TYPEMAX(type)   std::numeric_limits<type>::max()
 #define TYPEMIN(type)   std::numeric_limits<type>::min()
- 
+
 #define zoom ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
 #pragma GCC optimize("Ofast")
 #pragma GCC target("avx,avx2,fma")
 #pragma GCC optimization ("unroll-loops")
- 
+
 int main() {
-    #ifndef ONLINE_JUDGE
+#ifndef ONLINE_JUDGE
     // for getting input from input.txt
     freopen("../testcases/input.in", "r", stdin);
     // for writing output to output.txt
     freopen("../testcases/output.in", "w", stdout);
-    #endif
+#endif
     zoom;
-    // ll t;
-    // cin >> t;
-    // while(t--)
-    // {
-        ll a,b,x,y,p,q,n,m,k,sum=0,ans=0,res=0;
-        string s,r;
-        cin>>n;
-        vl arr(n);
-        arrin(arr,n);
-        ll MOD=1e9+7;
-        cin>>q;
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        ll a, b, x, y, p, q, n, m, k, sum = 0, ans = 0, res = 0;
+        string s, r;
+        unordered_map<string, int> umap;
+        // cin >> n;
+        vector<tuple<string, int, int>> arr;
         for (int i = 0; i < n; ++i)
         {
-            ans=(ans+arr[i])%MOD;
+            cin >> s >> a >> b;
+            arr.push_back(make_tuple(s, a, b));
         }
-        for (int i = 0; i < q; ++i)
+        sort(begin(arr), end(arr),
+        [](tuple<string, int, int, string, int> const & t1, tuple<string, int, int, string, int> const & t2) {
+            if (get<2>(t1) == get<2>(t2)) {
+                return get<1>(t1) < get<1>(t2);
+            }
+            return get<2>(t1) < get<2>(t2); // or use a custom compare function
+        }
+            );
+        for (int i = 0; i < n - 1; ++i)
         {
-            ans=(ans*2)%MOD;
-            cout<<ans<<endl;
+            if (get<2>(arr[i]) < get<1>(arr[i + 1])) {
+                break;
+            }
         }
-
+        for (int i = n - 1; i >= 0; --i)
+        {
+            if (umap.find(get<3>(arr[i])) == umap.end()) {
+                umap[get<3>(arr[i])] = get<4>(arr[i]);
+                ans++;
+            }
+            else {
+                if (umap[get<3>(arr[i])] > get<4>(arr[i])) {
+                    ans++;
+                    umap[get<3>(arr[i])] = get<4>(arr[i]);
+                }
+            }
+        }
+        cout << ans << endl;
         //vasort(a);
-    
+    }
     return 0;
 }
 //vector<vector<int>> vec( n , vector<int> (m, 0));
