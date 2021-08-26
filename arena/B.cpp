@@ -57,42 +57,33 @@ int main() {
     {
         ll a, b, x, y, p, q, n, m, k, sum = 0, ans = 0, res = 0;
         string s, r;
-        unordered_map<string, int> umap;
         cin >> n;
-        vector<tuple<string, int, int, string, int>> arr;
-        vector<string> ansarr;
+        map<pair<ll, ll>, vl> mp;
         for (int i = 0; i < n; ++i)
         {
-            cin >> s >> a >> b >> r >> x;
-            arr.push_back(make_tuple(s, a, b, r, x));
-        }
-        sort(begin(arr), end(arr),
-        [](tuple<string, int, int, string, int> const & t1, tuple<string, int, int, string, int> const & t2) {
-            if (get<2>(t1) == get<2>(t2)) {
-                return get<1>(t1) < get<1>(t2);
+            cin >> k;
+            vl arr(k);
+            ll ms = -1;
+            ll tt = 0;
+            for (int j = 0; j < k; ++j)
+            {
+                cin >> arr[j];
+                ms = max(ms, arr[j] - j);
             }
-            return get<2>(t1) < get<2>(t2); // or use a custom compare function
+            mp.insert(make_pair(make_pair(ms, k), arr));
         }
-            );
-        for (int i = 0; i < n; ++i)
-        {
-            if (umap.find(get<3>(arr[i])) == umap.end()) {
-                umap[get<3>(arr[i])] = get<4>(arr[i]);
-                ansarr.push_back(get<0>(arr[i]));
-            }
-            else {
-                if (umap[get<3>(arr[i])] < get<4>(arr[i])) {
-                    ansarr.push_back(get<0>(arr[i]));
-                    umap[get<3>(arr[i])] = get<4>(arr[i]);
+        for (auto i = mp.begin(); i != mp.end(); i++) {
+            for (int j = 0; j < i->second.size(); ++j)
+            {
+                // out4(i->first->first, j, ans, res);
+                if (res <= i->second[j]) {
+                    ans += i->second[j] - res + 1;
+                    res += i->second[j] - res + 1;
                 }
+                res++;
             }
         }
-        sort(ansarr.begin(), ansarr.end());
-        for (int i = 0; i < ansarr.size(); ++i)
-        {
-            cout << ansarr[i] << " ";
-        }
-        cout << endl;
+        out1(ans);
         //vasort(a);
     }
     return 0;

@@ -43,6 +43,15 @@ typedef vector<long long> vl;
 #pragma GCC target("avx,avx2,fma")
 #pragma GCC optimization ("unroll-loops")
 
+void dfs(int x) {
+    vis[x] = true;
+    for (int v : adj[x]) {
+        if (!vis[v]) {
+        }
+    }
+}
+
+
 int main() {
 #ifndef ONLINE_JUDGE
     // for getting input from input.txt
@@ -57,43 +66,34 @@ int main() {
     {
         ll a, b, x, y, p, q, n, m, k, sum = 0, ans = 0, res = 0;
         string s, r;
-        unordered_map<string, int> umap;
-        // cin >> n;
-        vector<tuple<string, int, int>> arr;
-        for (int i = 0; i < n; ++i)
+        cin >> a >> b;
+        x = max(a, b) - (a + b) / 2;
+        y = max(a, b) - (a + b + 1) / 2;
+        m = min(a, b) + (a + b) / 2;
+        n = min(a, b) + (a + b + 1) / 2;
+        set<ll> st;
+        for (int i = y; i < m + 1; i += 2)
         {
-            cin >> s >> a >> b;
-            arr.push_back(make_tuple(s, a, b));
+            st.insert(i);
         }
-        sort(begin(arr), end(arr),
-        [](tuple<string, int, int, string, int> const & t1, tuple<string, int, int, string, int> const & t2) {
-            if (get<2>(t1) == get<2>(t2)) {
-                return get<1>(t1) < get<1>(t2);
-            }
-            return get<2>(t1) < get<2>(t2); // or use a custom compare function
-        }
-            );
-        for (int i = 0; i < n - 1; ++i)
+        for (int i = x; i < n + 1; i += 2)
         {
-            if (get<2>(arr[i]) < get<1>(arr[i + 1])) {
-                break;
-            }
+            st.insert(i);
         }
-        for (int i = n - 1; i >= 0; --i)
-        {
-            if (umap.find(get<3>(arr[i])) == umap.end()) {
-                umap[get<3>(arr[i])] = get<4>(arr[i]);
-                ans++;
-            }
-            else {
-                if (umap[get<3>(arr[i])] > get<4>(arr[i])) {
-                    ans++;
-                    umap[get<3>(arr[i])] = get<4>(arr[i]);
-                }
-            }
-        }
-        cout << ans << endl;
+        out1(st.size());
+        // for (int i = 0; i < st.size(); ++i)
+        // {
+        //     cout << st[i] << " ";
+        // }
+        // cout << endl;
         //vasort(a);
+        // out4(x, y, m, n);
+        // out1(res - sum + 1);
+        for (auto elem : st)
+        {
+            cout << elem << " ";
+        }
+        cout << endl;
     }
     return 0;
 }
