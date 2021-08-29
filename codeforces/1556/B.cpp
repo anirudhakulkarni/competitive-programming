@@ -147,7 +147,18 @@ int main() {
             }
         }
         ans = minSwaps(s, odd, even);
-        out1(ans);
+        for (int i = 0; i < odd.size(); ++i)
+        {
+            odd[i] = n - odd[i] - 1;
+        }
+        for (int i = 0; i < even.size(); ++i)
+        {
+            even[i] = n - even[i] - 1;
+        }
+        reverse(s.begin(), s.end());
+        vasort(odd); vasort(even);
+        res = minSwaps(s, odd, even);
+        out1(min(ans, res));
     }
     return 0;
 }
