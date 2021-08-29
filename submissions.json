@@ -1116,5 +1116,20 @@
       "math"
     ],
     "timestamp": "Aug/26/2021 21:37"
+  },
+  "CF127336452": {
+    "contest_id": 1556,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces/1556/A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "A Variety of Operations",
+    "problem_url": "https://codeforces.com/contest/1556/problem/A",
+    "submission_id": "CF127336452",
+    "submission_url": "https://codeforces.com/contest/1556/submission/127336452",
+    "tags": [
+      "math"
+    ],
+    "timestamp": "Aug/29/2021 20:09"
   }
 }
