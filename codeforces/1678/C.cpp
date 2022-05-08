@@ -65,16 +65,13 @@ int main() {
         string s,r;
         cin>>n;
       //   cin>>s;
-      //   vector<int> arr(n);
-        int arr[n];
+        vector<int> arr(n);
       //   vecort<pair<int,int>> arrback;
         for(int i=0;i<n;i++){
             cin>>arr[i];
             // arrback.PB(MP(arr[i],i));
         }
-      //   vector<vector<int>> arr2(n,vector<int>(n+1));
-        int arr2[n][n+1];
-        memset(arr2,0,sizeof(arr2));
+        vector<vector<int>> arr2(n,vector<int>(n+1));
          for(int i=0;i<n;i++){
             for(int j=0;j<i;j++){
                arr2[i][arr[j]]++;
@@ -91,9 +88,7 @@ int main() {
             }
          }
 
-         // vector<vector<int>> arr3(n,vector<int>(n+1));
-         int arr3[n][n+1];
-         memset(arr3,0,sizeof(arr3));
+         vector<vector<int>> arr3(n,vector<int>(n+1));
          for(int i=n-1;i>=0;i--){
             for(int j=n-1;j>i;j--){
                arr3[i][arr[j]]++;
