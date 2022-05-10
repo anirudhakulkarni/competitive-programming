@@ -82,26 +82,97 @@ int main()
       int cols[n * m] = {0};
       int colin[m] = {0};
       // rows:
-      int lastone = -n*m;
+      int lastone = -1;
       for (ll i = 0; i < n * m; i++)
       {
-         if(s[i] == '1'){
+         if (s[i] == '1')
             lastone = i;
-            if(colin[i % m] == 0){
-               colin[i % m] = 1;
-               sum++;
+         if (i < m)
+         {
+            if(i==0){
+               rows[i] = s[i] - '0';
+            }
+            else{
+               if(rows[i-1]==0){
+                  rows[i] = rows[i - 1] + (s[i] - '0');
+               }
+               else{
+                  rows[i] = rows[i - 1] ;
+               }
             }
          }
-         if(i-lastone<m){
-            rows[i%m]+= 1;
+         else
+         {
+            if (s[i] == '1')
+            {
+               rows[i] = rows[i - m] + 1;
+            }
+            else
+            {
+               if (i - lastone < m)
+               {
+                  rows[i] = rows[i - m] + 1;
+               }
+               else
+               {
+                  rows[i] = rows[i - m];
+               }
+            }
          }
-         cout<<rows[i%m]+sum<<" ";
       }
-      // for (int i = 0; i < n * m; i++)
-      // {
-      //    // cout << rows[i] << " " << cols[i] << "\n";
-      //    cout << rows[i%m] + cols[i] << " ";
-      // }
+      // cols:
+      for (int i = 0; i < n * m; i++)
+      {
+
+         int flag = 0;
+         if (i < m)
+         {
+            colin[i] = s[i] - '0';
+            if (i == 0)
+               cols[i] = s[i] - '0';
+            else
+            {
+               if (s[i] == '1')
+               {
+                  cols[i] = cols[i - 1] + 1;
+                  
+               }
+                  
+               else
+                  cols[i] = cols[i - 1];
+            }
+         }
+         else
+         {
+            if (s[i] == '1')
+            {
+               flag = 0;
+               if(colin[i % m] == 0){
+                  flag = 1;
+                  colin[i % m] = 1;
+               }
+               
+               // cout<<flag<<endl;
+               if (flag == 1)
+               {
+                  cols[i] = cols[i - 1] + 1;
+               }
+               else
+               {
+                  cols[i] = cols[i - 1];
+               }
+            }
+            else
+            {
+               cols[i] = cols[i - 1];
+            }
+         }
+      }
+      for (int i = 0; i < n * m; i++)
+      {
+         // cout << rows[i] << " " << cols[i] << "\n";
+         cout << rows[i] + cols[i] << " ";
+      }
       cout << endl;
    }
 
