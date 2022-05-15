@@ -1132,6 +1132,25 @@
     ],
     "timestamp": "Aug/29/2021 20:09"
   },
+  "CF157303893": {
+    "contest_id": 1680,
+    "language": "PyPy 3",
+    "path": "codeforces\\1680\\C.py",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Binary String",
+    "problem_url": "https://codeforces.com/contest/1680/problem/C",
+    "submission_id": "CF157303893",
+    "submission_url": "https://codeforces.com/contest/1680/submission/157303893",
+    "tags": [
+      "binary search",
+      "greedy",
+      "strings",
+      "two pointers",
+      "*1600"
+    ],
+    "timestamp": "May/15/2022 17:40"
+  },
   "CF157674377": {
     "contest_id": 1684,
     "language": "GNU C++17",
