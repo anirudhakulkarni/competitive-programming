@@ -12,11 +12,12 @@ A repository to keep track of problem solving practice, containing solutions fro
 
 | # | Title | Solution | Tags | Submitted |
 |---| ----- | -------- | ---- | --------- |
-67 | [C - Column Swapping](https://codeforces.com/contest/1684/problem/C) | [GNU C++17](./codeforces/1684/C.cpp) | `constructive algorithms` `implementation` `sortings` `*1400` | May/19/2022 20:58 | 
-66 | [B - Z mod X = C](https://codeforces.com/contest/1684/problem/B) | [GNU C++17](./codeforces/1684/B.cpp) | `constructive algorithms` `math` `*800` | May/19/2022 20:25 | 
-65 | [A - Digit Minimization](https://codeforces.com/contest/1684/problem/A) | [GNU C++17](./codeforces/1684/A.cpp) | `constructive algorithms` `games` `math` `*800` | May/19/2022 20:11 | 
-64 | [C - Binary String](https://codeforces.com/contest/1680/problem/C) | [PyPy 3](./codeforces/1680/C.py) | `binary search` `greedy` `strings` `two pointers` `*1600` | May/15/2022 17:40 | 
-63 | [B - Robots](https://codeforces.com/contest/1680/problem/B) | [GNU C++17 (64)](./codeforces/1680/B.cpp) | `implementation` `*800` | May/15/2022 17:01 | 
+68 | [C - Column Swapping](https://codeforces.com/contest/1684/problem/C) | [GNU C++17](./codeforces/1684/C.cpp) | `constructive algorithms` `implementation` `sortings` `*1400` | May/19/2022 20:58 | 
+67 | [B - Z mod X = C](https://codeforces.com/contest/1684/problem/B) | [GNU C++17](./codeforces/1684/B.cpp) | `constructive algorithms` `math` `*800` | May/19/2022 20:25 | 
+66 | [A - Digit Minimization](https://codeforces.com/contest/1684/problem/A) | [GNU C++17](./codeforces/1684/A.cpp) | `constructive algorithms` `games` `math` `*800` | May/19/2022 20:11 | 
+65 | [C - Binary String](https://codeforces.com/contest/1680/problem/C) | [PyPy 3](./codeforces/1680/C.py) | `binary search` `greedy` `strings` `two pointers` `*1600` | May/15/2022 17:40 | 
+64 | [B - Robots](https://codeforces.com/contest/1680/problem/B) | [GNU C++17 (64)](./codeforces/1680/B.cpp) | `implementation` `*800` | May/15/2022 17:01 | 
+63 | [A - Minimums and Maximums](https://codeforces.com/contest/1680/problem/A) | [GNU C++17 (64)](./codeforces/1680/A.cpp) | `brute force` `math` `*800` | May/15/2022 16:42 | 
 62 | [A - A Variety of Operations](https://codeforces.com/contest/1556/problem/A) | [GNU C++17 (64)](./codeforces/1556/A.cpp) | `math` | Aug/29/2021 20:09 | 
 61 | [C - Rings](https://codeforces.com/contest/1562/problem/C) | [GNU C++17 (64)](./codeforces/1562/C.cpp) | `constructive algorithms` `greedy` `math` | Aug/26/2021 21:37 | 
 60 | [B - Scenes From a Memory](https://codeforces.com/contest/1562/problem/B) | [GNU C++17 (64)](./codeforces/1562/B.cpp) | `brute force` `implementation` `math` `number theory` | Aug/26/2021 20:32 | 
