@@ -1132,6 +1132,22 @@
     ],
     "timestamp": "Aug/29/2021 20:09"
   },
+  "CF157299358": {
+    "contest_id": 1680,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1680\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Robots",
+    "problem_url": "https://codeforces.com/contest/1680/problem/B",
+    "submission_id": "CF157299358",
+    "submission_url": "https://codeforces.com/contest/1680/submission/157299358",
+    "tags": [
+      "implementation",
+      "*800"
+    ],
+    "timestamp": "May/15/2022 17:01"
+  },
   "CF157303893": {
     "contest_id": 1680,
     "language": "PyPy 3",
