@@ -1,0 +1,319 @@
+make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
+# GNU Make 4.3
+# Built for x86_64-pc-cygwin
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Fri May 20 15:19:40 2022
+
+# Variables
+
+# environment
+FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
+# environment
+SYSTEMDRIVE = C:
+# environment
+LC_ALL = C
+# environment
+USERPROFILE = C:\Users\91930
+# environment
+VBOX_MSI_INSTALL_PATH = C:\Program Files\Oracle\VirtualBox\
+# environment
+LOCALAPPDATA = C:\Users\91930\AppData\Local
+# environment
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-40610810-fed0-4cf1-a410-f1cdcd8d414f-sock
+# environment
+VSCODE_CWD = C:\Users\91930\AppData\Local\Programs\Microsoft VS Code
+# environment
+CHOCOLATEYINSTALL = C:\ProgramData\chocolatey
+# environment
+SYSTEMROOT = C:\WINDOWS
+# environment
+PROCESSOR_LEVEL = 6
+# environment
+PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+# default
+MAKE_COMMAND := make
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_11016_PHABJDXKMSLUKOKC
+# environment
+!E: = e:\competitive programming\arena
+# environment
+FPS_BROWSER_USER_PROFILE_STRING = Default
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+VSCODE_LOG_STACK = false
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_CODE_CACHE_PATH = C:\Users\91930\AppData\Roaming\Code\CachedData\c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+# environment
+LANG = C
+# default
+.LOADED := 
+# environment
+TMP = /cygdrive/c/Users/91930/AppData/Local/Temp
+# default
+.INCLUDE_DIRS = /usr/include /usr/include
+# makefile
+MAKEFLAGS = pqrR
+# environment
+ONEDRIVE = C:\Users\91930\OneDrive
+# makefile
+CURDIR := /cygdrive/e/competitive programming/arena
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+PROGRAMFILES = C:\Program Files
+# environment
+MFLAGS = -pqrR
+# default
+.SHELLFLAGS := -c
+# environment
+COMMONPROGRAMW6432 = C:\Program Files\Common Files
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# makefile (from 'makefile', line 1)
+MAKEFILE_LIST := makefile
+# automatic
+@F = $(notdir $@)
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_PID = 11016
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+PATH_ORIGINAL = C:\Users\91930\AppData\Roaming\ActiveState\bin;C:\Program Files\ImageMagick-7.0.10-Q16-HDRI;C:\Users\91930\AppData\Local\Programs\Python\Python38\Scripts\;C:\Users\91930\AppData\Local\Programs\Python\Python38\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Brackets\command;C:\Program Files\MATLAB\R2020a\bin
+# environment
+ONLINESERVICES = Online Services
+# automatic
+*F = $(notdir $*)
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+INTELLIJ IDEA EDUCATIONAL EDITION = C:\Program Files\JetBrains\IntelliJ IDEA Educational Edition 2020.2.2\bin;
+# default
+MAKE_HOST := x86_64-pc-cygwin
+# environment
+ANDROID_HOME = C:\Users\91930\AppData\Local\Android\Sdk
+# environment
+PROGRAMDATA = C:\ProgramData
+# default
+SHELL := /bin/sh
+# environment
+HOMEPATH = \Users\91930
+# default
+MAKECMDGOALS := all
+# environment
+DRIVERDATA = C:\Windows\System32\Drivers\DriverData
+# environment
+COMSPEC = C:\WINDOWS\system32\cmd.exe
+# environment
+WEBSTORM = C:\Program Files\JetBrains\WebStorm 2020.3.1\bin;
+# environment
+WINDIR = C:\WINDOWS
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+PATH = /cygdrive/c/Users/91930/AppData/Local/Programs/Python/Python38/Scripts:/cygdrive/c/Users/91930/AppData/Local/Programs/Python/Python38:/cygdrive/c/Perl64/bin:/cygdrive/c/Users/91930/AppData/Roaming/ActiveState/bin:/cygdrive/c/windows/system32:/cygdrive/c/windows:/cygdrive/c/windows/System32/Wbem:/cygdrive/c/windows/System32/WindowsPowerShell/v1.0:/cygdrive/c/windows/System32/OpenSSH:/cygdrive/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/cygdrive/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/cygdrive/c/Program Files/dotnet:/cygdrive/c/WINDOWS/system32:/cygdrive/c/WINDOWS:/cygdrive/c/WINDOWS/System32/Wbem:/cygdrive/c/WINDOWS/System32/WindowsPowerShell/v1.0:/cygdrive/c/WINDOWS/System32/OpenSSH:/cygdrive/c/ProgramData/chocolatey/bin:/cygdrive/c/Program Files/Microsoft SQL Server/120/Tools/Binn:/cygdrive/c/Program Files/nodejs:/cygdrive/c/PROGRA~1/MATLAB/R2020a/bin:/cygdrive/c/Program Files/MATLAB/R2020a/bin:/cygdrive/c/Program Files (x86)/Ghdl/Bin:/cygdrive/c/vhdlcomp/ghdl/bin:/cygdrive/c/vhdlcomp/gtkwave/bin:/cygdrive/c/Program Files/swipl/bin:/cygdrive/c/Program Files (x86)/SMLNJ/bin:/cygdrive/c/Program Files/CMake/bin:/cygdrive/c/Program Files (x86)/SMLNJ/bin:/cygdrive/c/Program Files/Pandoc:/cygdrive/c/Program Files/Git/cmd:/cygdrive/c/Program Files/Docker/Docker/resources/bin:/cygdrive/c/ProgramData/DockerDesktop/version-bin:/cygdrive/c/Program Files (x86)/dotnet:%SystemRoot%/system32:%SystemRoot%:%SystemRoot%/System32/Wbem:%SYSTEMROOT%/System32/WindowsPowerShell/v1.0:%SYSTEMROOT%/System32/OpenSSH:/cygdrive/c/Program Files/Geth:/cygdrive/c/Users/91930/AppData/Local/Programs/Python/Python39/Scripts:/cygdrive/c/Users/91930/AppData/Local/Programs/Python/Python39:/cygdrive/c/Users/91930/AppData/Local/Programs/Python/Python38/Scripts:/cygdrive/c/Users/91930/AppData/Local/Programs/Python/Python38:/cygdrive/c/Users/91930/AppData/Local/Microsoft/WindowsApps:/cygdrive/c/Users/91930/AppData/Local/GitHubDesktop/bin:/cygdrive/c/Users/91930/AppData/Local/Programs/Microsoft VS Code/bin:/usr/bin:/cygdrive/c/Users/91930/.dotnet/tools:/cygdrive/c/Program Files/gs/gs9.52/bin:/cygdrive/c/Users/91930/AppData/Roaming/npm:/cygdrive/c/Program Files/Java/jdk-14/bin:/cygdrive/c/Program Files/JetBrains/IntelliJ IDEA Educational Edition 2020.2.2/bin:/cygdrive/c/ProgramData/Miniconda3:/cygdrive/c/ProgramData/Miniconda3/Scripts:/cygdrive/c/Users/91930/AppData/Local/Programs/Python/Python39/Library/bin:/cygdrive/c/Program Files/php-8.0.1-Win32-vs16-x64:/cygdrive/c/Program Files/JetBrains/WebStorm 2020.3.1/bin:/cygdrive/c/Program Files/JetBrains/IntelliJ IDEA 2020.3.1/bin:/cygdrive/c/GNU-Prolog/bin:/cygdrive/c/flutter/bin:/cygdrive/c/Program Files/heroku/bin:/cygdrive/c/Program Files/OpenVPN/bin:/cygdrive/c/Flex Windows/gcc/bin:/cygdrive/c/Flex Windows/Lex/bin:/cygdrive/c/Flex Windows/bison/bin:/cygdrive/c/Program Files (x86)/MLton/bin:/cygdrive/c/Program Files/Emacs/x86_64/bin:/cygdrive/c/Program Files (x86)/SMLNJ/bin:/cygdrive/c/Program Files (x86)/Nmap:/cygdrive/c/Program Files/hashcat-6.1.1:/cygdrive/c/php-8.0.7-src:/cygdrive/c/Program Files/ngrok:/cygdrive/c/Users/91930/Desktop:/cygdrive/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/bin:/cygdrive/c/Users/91930/AppData/Local/Microsoft/WindowsApps:/cygdrive/c/Program Files/JetBrains/PyCharm Community Edition 2022.1.1/bin:/cygdrive/c/Program Files/JetBrains/PyCharm 2022.1.1/bin
+# environment
+ZES_ENABLE_SYSMAN = 1
+# environment
+COMPUTERNAME = ANIRUDHA
+# default
+MAKEFILES := 
+# automatic
+^F = $(notdir $^)
+# environment
+PYCHARM = C:\Program Files\JetBrains\PyCharm 2022.1.1\bin;
+# environment
+PROMPT = $P$G
+# environment
+CHOCOLATEYLASTPATHUPDATE = 132446273705794383
+# environment
+NVTOOLSEXT_PATH = C:\Program Files\NVIDIA Corporation\NvToolsExt\
+# environment
+INTELLIJ IDEA = C:\Program Files\JetBrains\IntelliJ IDEA 2020.3.1\bin;
+# environment
+LOGONSERVER = \\ANIRUDHA
+# environment
+VSCODE_LOG_NATIVE = false
+# environment
+USERNAME = Anirudha
+# environment
+COMMONPROGRAMFILES = C:\Program Files\Common Files
+# automatic
+?F = $(notdir $?)
+# environment
+PROGRAMW6432 = C:\Program Files
+# environment
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PL;.WPL;.PY;.PYW
+# automatic
++F = $(notdir $+)
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+USERDOMAIN = ANIRUDHA
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+OS = Windows_NT
+# makefile
+.DEFAULT_GOAL := a
+# default
+MAKE_VERSION := 4.3
+# environment
+PLATFORMCODE = KV
+# environment
+PROGRAMFILES(X86) = C:\Program Files (x86)
+# environment
+USERDOMAIN_ROAMINGPROFILE = ANIRUDHA
+# environment
+NUMBER_OF_PROCESSORS = 12
+# environment
+PUBLIC = C:\Users\Public
+# environment
+APPDATA = C:\Users\91930\AppData\Roaming
+# environment
+HOMEDRIVE = C:
+# environment
+PROCESSOR_ARCHITECTURE = AMD64
+# environment
+PYCHARM COMMUNITY EDITION = C:\Program Files\JetBrains\PyCharm Community Edition 2022.1.1\bin;
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /cygdrive/c/Users/91930
+# environment
+COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+TEMP = /cygdrive/c/Users/91930/AppData/Local/Temp
+# environment
+VSCODE_IPC_HOOK = \\.\pipe\b2e86f61f16029f3431ba90a61422b62-1.67.2-main-sock
+# environment
+TERM = xterm-256color
+# environment
+SMLNJ_HOME = C:\Program Files (x86)\SMLNJ\
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# default
+SUFFIXES := 
+# environment
+ALLUSERSPROFILE = C:\ProgramData
+# environment
+SESSIONNAME = Console
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink guile load
+# environment
+REGIONCODE = APJ
+# environment
+PROCESSOR_REVISION = 9e0a
+# environment
+CUDA_HOME = C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.1
+# environment
+PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
+# variable set hash-table stats:
+# Load=113/1024=11%, Rehash=0, Collisions=12/140=9%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 3326121457, inode 562949953681352): 30 files, no impossibilities.
+
+# 30 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# Not a target:
+B.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+a:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 2):
+	g++ A.cpp 
+	./a.out
+
+b: B.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 5):
+	rm b.out -f
+	g++ B.cpp -o b.out
+	./b.out
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+all:
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-10 14:19:49.254696
+#  File has been updated.
+#  Successfully updated.
+
+# files hash-table stats:
+# Load=7/1024=1%, Rehash=0, Collisions=0/18=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 35 / storage = 359 B / avg = 10 B
+# current buf: size = 8162 B / used = 359 B / count = 35 / avg = 10 B
+
+# strcache performance: lookups = 43 / hit rate = 18%
+# hash-table stats:
+# Load=35/8192=0%, Rehash=0, Collisions=0/43=0%
+# Finished Make data base on Fri May 20 15:19:40 2022
+
+ 

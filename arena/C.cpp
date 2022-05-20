@@ -1,3 +1,10 @@
+
+//  _  _           _                   _  _      _  _
+// | || |   _ __  / | _ __  _   _   __| || |__  | || |
+// | || |_ | '_ \ | || '__|| | | | / _` || '_ \ | || |_
+// |__   _|| | | || || |   | |_| || (_| || | | ||__   _|
+//    |_|  |_| |_||_||_|    \__,_| \__,_||_| |_|   |_|
+
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
@@ -16,13 +23,12 @@ typedef vector<long long> vl;
 #define vdsort(v) sort(v.begin(), v.end(),greater<ll>())
 #define F first
 #define S second
-#define ln "\n"
-#define out1(x1) cout << x1 << ln
-#define out2(x1,x2) cout << x1 << " " << x2 << ln
-#define out3(x1,x2,x3) cout << x1 << " " << x2 << " " << x3 << ln
-#define out4(x1,x2,x3,x4) cout << x1 << " " << x2 << " " << x3 << " " << x4 << ln
-#define out5(x1,x2,x3,x4,x5) cout << x1 << " " << x2 << " " << x3 << " " << x4 << " " << x5 << ln
-#define out6(x1,x2,x3,x4,x5,x6) cout << x1 << " " << x2 << " " << x3 << " " << x4 << " " << x5 << " " << x6 << ln
+#define out1(x1) cout << x1 << endl
+#define out2(x1,x2) cout << x1 << " " << x2 << endl
+#define out3(x1,x2,x3) cout << x1 << " " << x2 << " " << x3 << endl
+#define out4(x1,x2,x3,x4) cout << x1 << " " << x2 << " " << x3 << " " << x4 << endl
+#define out5(x1,x2,x3,x4,x5) cout << x1 << " " << x2 << " " << x3 << " " << x4 << " " << x5 << endl
+#define out6(x1,x2,x3,x4,x5,x6) cout << x1 << " " << x2 << " " << x3 << " " << x4 << " " << x5 << " " << x6 << endl
 
 #define in1(x1) cin >> x1
 #define in2(x1,x2) cin >> x1 >> x2
@@ -33,8 +39,8 @@ typedef vector<long long> vl;
 
 #define mz(a)   memset(a,0,sizeof(a))
 #define arrin(a,n) forn(i,n) cin >> a[i];
-#define arrout(a,n) forn(i,n) {cout << a[i] << " ";} cout << ln;
-#define arr2out(a,n,m) forn(i,n){forn(j,m){cout << a[i][j] << " ";}cout << ln;}
+#define arrout(a,n) forn(i,n) {cout << a[i] << " ";} cout << endl;
+#define arr2out(a,n,m) forn(i,n){forn(j,m){cout << a[i][j] << " ";}cout << endl;}
 #define TYPEMAX(type)   std::numeric_limits<type>::max()
 #define TYPEMIN(type)   std::numeric_limits<type>::min()
 
@@ -43,15 +49,16 @@ typedef vector<long long> vl;
 #pragma GCC target("avx,avx2,fma")
 #pragma GCC optimization ("unroll-loops")
 
-void dfs(int x) {
-    vis[x] = true;
-    for (int v : adj[x]) {
-        if (!vis[v]) {
+ll get(vector<ll>tem) {
+    ll ans = 0;
+    for (int i = 0; i < 30; i++)
+    {
+        if (tem[i]) {
+            ans += pow(2, i);
         }
     }
+    return ans;
 }
-
-
 int main() {
 #ifndef ONLINE_JUDGE
     // for getting input from input.txt
@@ -66,34 +73,42 @@ int main() {
     {
         ll a, b, x, y, p, q, n, m, k, sum = 0, ans = 0, res = 0;
         string s, r;
-        cin >> a >> b;
-        x = max(a, b) - (a + b) / 2;
-        y = max(a, b) - (a + b + 1) / 2;
-        m = min(a, b) + (a + b) / 2;
-        n = min(a, b) + (a + b + 1) / 2;
-        set<ll> st;
-        for (int i = y; i < m + 1; i += 2)
-        {
-            st.insert(i);
+        cin >> n;
+        vl arr1(n);
+        arrin(arr1, n);
+        vl arr2(n);
+        arrin(arr2, n);
+        vector<ll> tem(30, 0);
+        ll i = 29;
+        while (i >= 0) {
+            // arrout(tem, 30);
+            tem[i] = 1;
+            ans = get(tem);
+            sum = 0;
+            for (int i = 0; i < n; ++i)
+            {
+                if (((arr1[i]&ans) != ans ) && ((arr2[i]&ans) != ans) ) {
+                    sum = -1;
+                    // out3(i, ans, -1);
+                    break;
+                }
+            }
+            if (sum == -1) {
+                tem[i] = 0;
+                i--;
+                continue;
+            }
+            i--;
         }
-        for (int i = x; i < n + 1; i += 2)
+        ans = get(tem);
+        for (int i = 0; i < n; ++i)
         {
-            st.insert(i);
+            if ((arr1[i]&ans) != ans) {
+                res++;
+            }
         }
-        out1(st.size());
-        // for (int i = 0; i < st.size(); ++i)
-        // {
-        //     cout << st[i] << " ";
-        // }
-        // cout << endl;
+        out2(ans, res);
         //vasort(a);
-        // out4(x, y, m, n);
-        // out1(res - sum + 1);
-        for (auto elem : st)
-        {
-            cout << elem << " ";
-        }
-        cout << endl;
     }
     return 0;
 }

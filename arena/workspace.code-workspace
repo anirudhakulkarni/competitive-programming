@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"hts.path.correctSolution": "A.cpp",
+		"hts.path.wrongSolution": "B.cpp",
+		"hts.path.generatorFile": "C.cpp",
+		"hts.path.checker": "fcmp.cpp",
+		"hts.generator.argument": "",
+		"files.associations": {
+			"*.html": "html",
+			"tuple": "cpp"
+		}
+	}
+}
